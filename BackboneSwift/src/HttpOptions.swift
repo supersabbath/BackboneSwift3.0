@@ -9,8 +9,7 @@
 import UIKit
 
 public struct HttpOptions {
-    
-    
+
     public var useCache = true
     public var headers:[String:String]?
     public var query:String?
@@ -22,15 +21,13 @@ public struct HttpOptions {
     public init (httpHeader:[String:String]){
         headers = httpHeader
     }
-    
     public init(postBody:[String:AnyObject]){
         body = postBody
     }
+    
     public init(queryString:String){
-        
         query = queryString
     }
-    
     public subscript(queryValues:String) -> String {
         get {
             return query ?? ""
@@ -39,5 +36,4 @@ public struct HttpOptions {
             query = queryValues
         }
     }
-    
 }

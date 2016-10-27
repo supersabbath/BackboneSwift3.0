@@ -125,14 +125,13 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
     }
    
     // MARK: -- Fetchable Protocol
+
     public func fetch(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         
         return Promise(resolvers: { (fulfill, reject) in
             
             fetch(options, onSuccess: { (response) in
-                
                 fulfill(response)
-                
                 }, onError: { (error) in
                     reject(error)
             })
@@ -152,5 +151,81 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
             })
     }
     
+    // MARK: -- Deletable
+    public func delete(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+        return Promise { (fulfill, reject) in
+            delete(options, onSuccess: { (result) -> Void in
+                fulfill(result)
+                }, onError: { (error) in
+                reject(error)
+            })
+        }
+    }
+    
+    public func delete(_ options: HttpOptions? = nil , onSuccess:@escaping (ResponseTuple) -> Void, onError:@escaping (BackboneError) -> Void) {
+        guard let feedURL = url  else {
+            print("Models must have an URL, DELETE cancelled")
+            onError(.invalidURL)
+            return
+        }
+        processOptions(feedURL, inOptions: options  , complete: { (options, url) in
+            self.synch(url, method: .delete , options: options,onSuccess: onSuccess, onError: onError)
+        })
+    }
+     // MARK: -- Savable means  PUT
+    public func save(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+    
+        return Promise {  fulfill, reject in
+                save(options, onSuccess: { (result) -> Void in
+                    fulfill(result)
+                }) { (error) -> Void in
+                    reject (error )
+                }
+        }
+    }
+    
+    public func save(_ options: HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) -> Void, onError: @escaping (BackboneError) -> Void) {
+        guard let feedURL = url  else {
+            print("Models must have an URL, fetch cancelled")
+            onError(.invalidURL)
+            return
+        }
+        var putOptions = options
+        if options != nil {
+             putOptions?.body = jsonDict()
+        }else {
+            putOptions = HttpOptions(postBody:jsonDict())
+        }
+        processOptions(feedURL, inOptions: putOptions  , complete: { (options, url) in
+            self.synch(url, method: .put, options: options,onSuccess: onSuccess, onError: onError)
+        })
+    }
+    // MARK: --  POST
+    public func create(_ options:HttpOptions? = nil) -> Promise <ResponseTuple> {
+        return Promise {  fulfill, reject in
+            create(options, onSuccess: { (result) -> Void in
+                fulfill(result)
+                }, onError: { (error) -> Void in
+                reject (error )
+            })
+        }
+    }
+    
+    public func create(_ options:HttpOptions?  = nil , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void) {
+        guard let feedURL = url  else {
+            print("Models must have an URL, fetch cancelled")
+            onError(.invalidURL)
+            return
+        }
+        var postOptions = options
+        if options != nil {
+            postOptions?.body = jsonDict()
+        }else {
+            postOptions = HttpOptions(postBody:jsonDict())
+        }
+        processOptions(feedURL, inOptions: postOptions  , complete: { (options, url) in
+            self.synch(url, method: .post, options: options,onSuccess: onSuccess, onError: onError)
+        })
+    }
 }
 

@@ -195,4 +195,75 @@ class ModelTests: XCTestCase {
             print("time out")
         });
     }
+    
+    
+    // MARK:  Delete
+    
+    /**
+     Test naming convention for StarzPlay
+     */
+    func  testDeleteShouldSuccess() {
+        
+        let asyncExpectation = expectation(description: "testDeleteShouldSuccess")
+        //given
+        sut.url = "http://httpbin.org/delete"
+        //when
+        sut.delete().then { (result) -> Void in
+            //then
+            XCTAssertTrue(result.response?.statusCode == 200)
+            asyncExpectation.fulfill()
+        }.catch { (err) in
+                XCTFail()
+                asyncExpectation.fulfill()
+        }
+        self.waitForExpectations(timeout: 100, handler:{ (error) in
+            print("test time out")
+        });
+    }
+    // MARK: PUT
+    func  testPUTShouldSuccess() {
+        
+        let asyncExpectation = expectation(description: "testPUTShouldSuccess")
+        //given
+        sut.url = "http://httpbin.org/put"
+        sut.dummyJuanCarlos = "jayC"
+        sut.dummyBoolean = true
+
+        //when
+        sut.save().then { (result) -> Void in
+            //then
+            XCTAssertTrue(result.response?.statusCode == 200)
+           
+            asyncExpectation.fulfill()
+            }.catch { (err) in
+                XCTFail()
+                asyncExpectation.fulfill()
+        }
+        self.waitForExpectations(timeout: 100, handler:{ (error) in
+            print("test time out")
+        });
+    }
+      // MARK: POST 
+    func  testPOSTShouldSuccess() {
+        
+        let asyncExpectation = expectation(description: "testPOSTShouldSuccess")
+        //given
+        sut.url = "http://httpbin.org/post"
+        sut.dummyJuanCarlos = "jayC"
+        sut.dummyBoolean = true
+        
+        //when
+        sut.create().then { (result) -> Void in
+            //then
+            XCTAssertTrue(result.response?.statusCode == 200)
+            asyncExpectation.fulfill()
+            }.catch { (err) in
+                XCTFail()
+                asyncExpectation.fulfill()
+        }
+        self.waitForExpectations(timeout: 100, handler:{ (error) in
+            print("test time out")
+        });
+    }
+    
 }

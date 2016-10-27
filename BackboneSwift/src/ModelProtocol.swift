@@ -15,9 +15,8 @@ import Alamofire
 public typealias ResponseTuple =  (model:ModelProtocol,response: HTTPURLResponse?)
 public typealias JSONDictionary = [String:AnyObject]
 
-public protocol ModelProtocol :  Fetchable  //: Savable , Deletable , Fetchable , Creatable
+public protocol ModelProtocol :  Fetchable, Deletable , Savable , Creatable
 {
-    
     /**
      - *url*  the relative URL where the model's resource would be located on the server. If your models are located somewhere else, override this method with the correct logic. Generates URLs of the form: "[collection.url]/[id]" by default, but you may override by specifying an explicit urlRoot if the model's collection shouldn't be taken into account.
      */
