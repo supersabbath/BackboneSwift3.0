@@ -9,21 +9,20 @@
 import Foundation
 import Alamofire
 
-internal protocol ConnectivityProtocol  {
-
-   func synch(_ modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions?, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void)
+public protocol ConnectivityProtocol  {
+    
+ func synch<T:ModelProtocol>(_ caller:T?,  modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions?, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void)
     
   func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void)
 }
 
-extension Model {
+extension ConnectivityProtocol where Self:Model {
  
-    internal func synch(_ modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
+    public func synch<T:ModelProtocol>(_ caller:T? , modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
         
-        
-        Alamofire.request(modelURL, method: method , parameters: options?.body , headers: options?.headers ).validate(statusCode: 200..<500).responseSwiftyJSON(completionHandler: { [weak self] (dataResponse, jsonObject) in
+        Alamofire.request(modelURL, method: method , parameters: options?.body , headers: options?.headers ).validate(statusCode: 200..<500).responseSwiftyJSON(completionHandler: {  (dataResponse, jsonObject) in
             
-            guard let weakSelf = self else { return } // avoid retain cycle and Async callback crashes
+            guard let weakSelf = caller else { return } // avoid retain cycle and Async callback crashes
             guard let httpStatus = dataResponse.response?.statusCode else {
                 onError(BackboneError.httpError(description: "No http status code"))
                 return
@@ -53,7 +52,7 @@ extension Model {
     }
 
     
-    internal func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void) {
+    public func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void) {
         
         var urlComponents = URLComponents(string:baseUrl)!
         

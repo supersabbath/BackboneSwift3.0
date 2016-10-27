@@ -251,7 +251,6 @@ class ModelTests: XCTestCase {
         sut.url = "http://httpbin.org/post"
         sut.dummyJuanCarlos = "jayC"
         sut.dummyBoolean = true
-        
         //when
         sut.create().then { (result) -> Void in
             //then

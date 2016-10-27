@@ -12,7 +12,7 @@ import PromiseKit
 import Alamofire
 
 
-open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProtocol {
+open class Model: NSObject , ModelProtocol , JsonRepresentable {
    
     open var url:String?
     
@@ -126,30 +126,6 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
    
     // MARK: -- Fetchable Protocol
 
-    public func fetch(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
-        
-        return Promise(resolvers: { (fulfill, reject) in
-            
-            fetch(options, onSuccess: { (response) in
-                fulfill(response)
-                }, onError: { (error) in
-                    reject(error)
-            })
-        })
-    }
-    
-    
-    public func fetch(_ options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void){
-        
-        guard let feedURL = url  else {
-            debugPrint("Collections must have an URL, fetch cancelled")
-            onError(.invalidURL)
-            return
-        }
-        processOptions(feedURL, inOptions: options  , complete: { [weak self] (options, url) in
-            self?.synch(url, method: .get, options: options,onSuccess: onSuccess, onError: onError)
-            })
-    }
     
     // MARK: -- Deletable
     public func delete(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
@@ -169,7 +145,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
             return
         }
         processOptions(feedURL, inOptions: options  , complete: { (options, url) in
-            self.synch(url, method: .delete , options: options,onSuccess: onSuccess, onError: onError)
+            self.synch(self, modelURL: url, method: .delete , options: options,onSuccess: onSuccess, onError: onError)
         })
     }
      // MARK: -- Savable means  PUT
@@ -197,7 +173,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
             putOptions = HttpOptions(postBody:jsonDict())
         }
         processOptions(feedURL, inOptions: putOptions  , complete: { (options, url) in
-            self.synch(url, method: .put, options: options,onSuccess: onSuccess, onError: onError)
+            self.synch( self, modelURL:url, method: .put, options: options,onSuccess: onSuccess, onError: onError)
         })
     }
     // MARK: --  POST
@@ -224,7 +200,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable, ConnectivityProt
             postOptions = HttpOptions(postBody:jsonDict())
         }
         processOptions(feedURL, inOptions: postOptions  , complete: { (options, url) in
-            self.synch(url, method: .post, options: options,onSuccess: onSuccess, onError: onError)
+            self.synch(self , modelURL: url, method: .post, options: options,onSuccess: onSuccess, onError: onError)
         })
     }
 }
