@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.0.1)
+  - PromiseKit/CorePromise (4.0.4)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - PromiseKit/CorePromise
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+PODFILE CHECKSUM: a47ab52b2f672ae2d62dc092ed39eaa12954d825
+
+COCOAPODS: 1.0.1
