@@ -11,8 +11,28 @@ import SwiftyJSON
 import PromiseKit
 
 @testable import BackboneSwift
+
 /**
- SUTs:  TestClass and VideoSUT
+ 
+    SUT Classes for CollectionTest
+ */
+open class ProjectSUT : Model {
+    
+    var full_name:String?
+    var name:String?
+    
+}
+
+open class VideoCollectionSUT : VideoSUT {
+    
+    var contentType : String?
+}
+
+
+/**************************************************************
+
+    SUTs:  USED in MODEL test TestClass and VideoSUT
+ 
  */
 open class JayCDumpClass : Model {
      var dummyString:String?
@@ -31,6 +51,8 @@ open class VideoSUT : Model {
         }
     }
 }
+
+
 extension Fetchable where Self: VideoSUT {
     
     public func fetch(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {

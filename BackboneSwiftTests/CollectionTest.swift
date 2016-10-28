@@ -1,19 +1,23 @@
 //
-//  BackboneSwiftTests.swift
-//  BackboneSwiftTests
+//  CollectionTest.swift
+//  BackboneSwift
 //
-//  Created by Fernando Canon on 24/10/16.
+//  Created by Fernando Canon on 28/10/16.
 //  Copyright © 2016 Alphabit. All rights reserved.
 //
 
 import XCTest
+
 @testable import BackboneSwift
 
-class BackboneSwiftTests: XCTestCase {
+class CollectionTest: XCTestCase {
+    
+   
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let m = Model()
+      
     }
     
     override func tearDown() {

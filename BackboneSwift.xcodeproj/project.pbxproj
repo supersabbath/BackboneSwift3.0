@@ -9,23 +9,28 @@
 /* Begin PBXBuildFile section */
 		7B77A9813DFAEED84BA99413 /* Pods_BackboneSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221476D5C27156BBDF216959 /* Pods_BackboneSwift.framework */; };
 		85EB417A31471183F407C75C /* Pods_BackboneSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F67E2572EB695957F793B57 /* Pods_BackboneSwiftTests.framework */; };
+		E1126F401DC3439D0035D89D /* Model+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */; };
+		E1126F421DC3447B0035D89D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F411DC3447B0035D89D /* Model.swift */; };
+		E1126F471DC345540035D89D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F431DC345540035D89D /* Errors.swift */; };
+		E1126F481DC345540035D89D /* HttpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F441DC345540035D89D /* HttpOptions.swift */; };
+		E1126F491DC345540035D89D /* JSONOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F451DC345540035D89D /* JSONOperations.swift */; };
+		E1126F4A1DC345540035D89D /* responseSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F461DC345540035D89D /* responseSwiftyJSON.swift */; };
+		E1126F4D1DC345640035D89D /* ConectivityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4B1DC345640035D89D /* ConectivityProtocol.swift */; };
+		E1126F4E1DC345640035D89D /* HTTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4C1DC345640035D89D /* HTTPProtocols.swift */; };
+		E1126F501DC3459C0035D89D /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4F1DC3459C0035D89D /* ModelProtocol.swift */; };
+		E1126F551DC346260035D89D /* Model+JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */; };
+		E1126F571DC346330035D89D /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F561DC346330035D89D /* Collection.swift */; };
+		E1126F591DC346EF0035D89D /* BackboneDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F581DC346EF0035D89D /* BackboneDelegates.swift */; };
+		E1126F5C1DC349000035D89D /* ResponseMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F5B1DC349000035D89D /* ResponseMetadata.swift */; };
 		E116DD3C1DBE582B00BA812E /* BackboneSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E116DD321DBE582B00BA812E /* BackboneSwift.framework */; };
-		E116DD411DBE582B00BA812E /* BackboneSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD401DBE582B00BA812E /* BackboneSwiftTests.swift */; };
 		E116DD431DBE582B00BA812E /* BackboneSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E116DD351DBE582B00BA812E /* BackboneSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E116DD4D1DBE5BCE00BA812E /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD4C1DBE5BCE00BA812E /* ModelProtocol.swift */; };
-		E116DD4F1DBE5CC700BA812E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD4E1DBE5CC700BA812E /* Errors.swift */; };
-		E116DD511DBE5D7C00BA812E /* HttpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD501DBE5D7C00BA812E /* HttpOptions.swift */; };
-		E116DD531DBE60A300BA812E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD521DBE60A300BA812E /* Model.swift */; };
-		E116DD551DBE63BB00BA812E /* JSONOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DD541DBE63BB00BA812E /* JSONOperations.swift */; };
-		E11902251DBF57CA009C64FD /* Model+JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902241DBF57CA009C64FD /* Model+JSONRepresentable.swift */; };
 		E11902271DBF5C11009C64FD /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902261DBF5C11009C64FD /* ModelTests.swift */; };
 		E11902291DBF5D9F009C64FD /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
-		E119022C1DBF721D009C64FD /* ConnectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119022B1DBF721D009C64FD /* ConnectionProtocols.swift */; };
-		E119022E1DBF9753009C64FD /* responseSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119022D1DBF9753009C64FD /* responseSwiftyJSON.swift */; };
 		E12622511DC0DABF00613DAD /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622501DC0DABF00613DAD /* TestDataSource.swift */; };
 		E12622521DC0F77000613DAD /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
 		E12622541DC2143A00613DAD /* Model+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622531DC2143A00613DAD /* Model+Parser.swift */; };
-		E12622561DC2145A00613DAD /* Model+Conectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622551DC2145A00613DAD /* Model+Conectivity.swift */; };
+		E1700CEF1DC3573000C9A73B /* Collection+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */; };
+		E1700CF51DC35E4A00C9A73B /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,25 +50,30 @@
 		5F67E2572EB695957F793B57 /* Pods_BackboneSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BEAA1C0D4D863C480CB0B24 /* Pods-BackboneSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.release.xcconfig"; sourceTree = "<group>"; };
 		D57F29CBAD5DBE4D183A7F40 /* Pods-BackboneSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Fetchable.swift"; path = "src/Model/Model+Fetchable.swift"; sourceTree = "<group>"; };
+		E1126F411DC3447B0035D89D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = src/Model/Model.swift; sourceTree = "<group>"; };
+		E1126F431DC345540035D89D /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = src/Shared/Errors.swift; sourceTree = "<group>"; };
+		E1126F441DC345540035D89D /* HttpOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpOptions.swift; path = src/Shared/HttpOptions.swift; sourceTree = "<group>"; };
+		E1126F451DC345540035D89D /* JSONOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONOperations.swift; path = src/Shared/JSONOperations.swift; sourceTree = "<group>"; };
+		E1126F461DC345540035D89D /* responseSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = responseSwiftyJSON.swift; path = src/Shared/responseSwiftyJSON.swift; sourceTree = "<group>"; };
+		E1126F4B1DC345640035D89D /* ConectivityProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConectivityProtocol.swift; path = src/Protocols/ConectivityProtocol.swift; sourceTree = "<group>"; };
+		E1126F4C1DC345640035D89D /* HTTPProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPProtocols.swift; path = src/Protocols/HTTPProtocols.swift; sourceTree = "<group>"; };
+		E1126F4F1DC3459C0035D89D /* ModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelProtocol.swift; path = src/Protocols/ModelProtocol.swift; sourceTree = "<group>"; };
+		E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+JSONRepresentable.swift"; path = "src/Model/Model+JSONRepresentable.swift"; sourceTree = "<group>"; };
+		E1126F561DC346330035D89D /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Collection.swift; path = src/Collection/Collection.swift; sourceTree = "<group>"; };
+		E1126F581DC346EF0035D89D /* BackboneDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackboneDelegates.swift; path = src/Protocols/BackboneDelegates.swift; sourceTree = "<group>"; };
+		E1126F5B1DC349000035D89D /* ResponseMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseMetadata.swift; path = src/Shared/ResponseMetadata.swift; sourceTree = "<group>"; };
 		E116DD321DBE582B00BA812E /* BackboneSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BackboneSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E116DD351DBE582B00BA812E /* BackboneSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackboneSwift.h; sourceTree = "<group>"; };
 		E116DD361DBE582B00BA812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E116DD3B1DBE582B00BA812E /* BackboneSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackboneSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E116DD401DBE582B00BA812E /* BackboneSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackboneSwiftTests.swift; sourceTree = "<group>"; };
 		E116DD421DBE582B00BA812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E116DD4C1DBE5BCE00BA812E /* ModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelProtocol.swift; path = src/ModelProtocol.swift; sourceTree = "<group>"; };
-		E116DD4E1DBE5CC700BA812E /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = src/Errors.swift; sourceTree = "<group>"; };
-		E116DD501DBE5D7C00BA812E /* HttpOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpOptions.swift; path = src/HttpOptions.swift; sourceTree = "<group>"; };
-		E116DD521DBE60A300BA812E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = src/Model.swift; sourceTree = "<group>"; };
-		E116DD541DBE63BB00BA812E /* JSONOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONOperations.swift; path = src/JSONOperations.swift; sourceTree = "<group>"; };
-		E11902241DBF57CA009C64FD /* Model+JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+JSONRepresentable.swift"; path = "src/Model+JSONRepresentable.swift"; sourceTree = "<group>"; };
 		E11902261DBF5C11009C64FD /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		E11902281DBF5D9F009C64FD /* SUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SUT.swift; path = Mocks/SUT.swift; sourceTree = "<group>"; };
-		E119022B1DBF721D009C64FD /* ConnectionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionProtocols.swift; path = src/Model/ConnectionProtocols.swift; sourceTree = "<group>"; };
-		E119022D1DBF9753009C64FD /* responseSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = responseSwiftyJSON.swift; path = src/responseSwiftyJSON.swift; sourceTree = "<group>"; };
 		E12622501DC0DABF00613DAD /* TestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDataSource.swift; path = Mocks/TestDataSource.swift; sourceTree = "<group>"; };
 		E12622531DC2143A00613DAD /* Model+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Parser.swift"; path = "src/Model/Model+Parser.swift"; sourceTree = "<group>"; };
-		E12622551DC2145A00613DAD /* Model+Conectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Model+Conectivity.swift"; sourceTree = "<group>"; };
+		E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection+Fetchable.swift"; path = "src/Collection/Collection+Fetchable.swift"; sourceTree = "<group>"; };
+		E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,60 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E1126F3C1DC342B70035D89D /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				E1126F5A1DC347510035D89D /* Collection+Extensions */,
+				E1126F561DC346330035D89D /* Collection.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
+		E1126F3D1DC342D20035D89D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E1126F431DC345540035D89D /* Errors.swift */,
+				E1126F441DC345540035D89D /* HttpOptions.swift */,
+				E1126F451DC345540035D89D /* JSONOperations.swift */,
+				E1126F461DC345540035D89D /* responseSwiftyJSON.swift */,
+				E1126F5B1DC349000035D89D /* ResponseMetadata.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		E1126F3E1DC3430D0035D89D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E1126F411DC3447B0035D89D /* Model.swift */,
+				E119022A1DBF7198009C64FD /* Model+Extensions */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E1126F511DC345B60035D89D /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E12622501DC0DABF00613DAD /* TestDataSource.swift */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		E1126F531DC345E70035D89D /* SUT */ = {
+			isa = PBXGroup;
+			children = (
+				E11902281DBF5D9F009C64FD /* SUT.swift */,
+			);
+			name = SUT;
+			sourceTree = "<group>";
+		};
+		E1126F5A1DC347510035D89D /* Collection+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */,
+			);
+			name = "Collection+Extensions";
+			sourceTree = "<group>";
+		};
 		E116DD281DBE582B00BA812E = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +194,12 @@
 		E116DD341DBE582B00BA812E /* BackboneSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E1126F3E1DC3430D0035D89D /* Model */,
+				E1126F3D1DC342D20035D89D /* Shared */,
+				E1126F3C1DC342B70035D89D /* Collection */,
 				E12622581DC2301700613DAD /* Protocols */,
-				E119022A1DBF7198009C64FD /* Model+Extensions */,
 				E116DD361DBE582B00BA812E /* Info.plist */,
 				E116DD351DBE582B00BA812E /* BackboneSwift.h */,
-				E116DD4E1DBE5CC700BA812E /* Errors.swift */,
-				E116DD501DBE5D7C00BA812E /* HttpOptions.swift */,
-				E116DD521DBE60A300BA812E /* Model.swift */,
-				E116DD541DBE63BB00BA812E /* JSONOperations.swift */,
-				E119022D1DBF9753009C64FD /* responseSwiftyJSON.swift */,
 			);
 			path = BackboneSwift;
 			sourceTree = "<group>";
@@ -146,11 +207,11 @@
 		E116DD3F1DBE582B00BA812E /* BackboneSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				E116DD401DBE582B00BA812E /* BackboneSwiftTests.swift */,
+				E1126F531DC345E70035D89D /* SUT */,
+				E1126F511DC345B60035D89D /* DataSource */,
 				E116DD421DBE582B00BA812E /* Info.plist */,
 				E11902261DBF5C11009C64FD /* ModelTests.swift */,
-				E11902281DBF5D9F009C64FD /* SUT.swift */,
-				E12622501DC0DABF00613DAD /* TestDataSource.swift */,
+				E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */,
 			);
 			path = BackboneSwiftTests;
 			sourceTree = "<group>";
@@ -158,9 +219,9 @@
 		E119022A1DBF7198009C64FD /* Model+Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E11902241DBF57CA009C64FD /* Model+JSONRepresentable.swift */,
+				E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */,
 				E12622531DC2143A00613DAD /* Model+Parser.swift */,
-				E12622551DC2145A00613DAD /* Model+Conectivity.swift */,
+				E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */,
 			);
 			name = "Model+Extensions";
 			sourceTree = "<group>";
@@ -168,8 +229,10 @@
 		E12622581DC2301700613DAD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E116DD4C1DBE5BCE00BA812E /* ModelProtocol.swift */,
-				E119022B1DBF721D009C64FD /* ConnectionProtocols.swift */,
+				E1126F4F1DC3459C0035D89D /* ModelProtocol.swift */,
+				E1126F4B1DC345640035D89D /* ConectivityProtocol.swift */,
+				E1126F4C1DC345640035D89D /* HTTPProtocols.swift */,
+				E1126F581DC346EF0035D89D /* BackboneDelegates.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -370,17 +433,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1126F4D1DC345640035D89D /* ConectivityProtocol.swift in Sources */,
+				E1126F4A1DC345540035D89D /* responseSwiftyJSON.swift in Sources */,
+				E1126F481DC345540035D89D /* HttpOptions.swift in Sources */,
 				E12622521DC0F77000613DAD /* SUT.swift in Sources */,
-				E11902251DBF57CA009C64FD /* Model+JSONRepresentable.swift in Sources */,
+				E1126F491DC345540035D89D /* JSONOperations.swift in Sources */,
+				E1126F591DC346EF0035D89D /* BackboneDelegates.swift in Sources */,
 				E12622541DC2143A00613DAD /* Model+Parser.swift in Sources */,
-				E116DD4F1DBE5CC700BA812E /* Errors.swift in Sources */,
-				E119022E1DBF9753009C64FD /* responseSwiftyJSON.swift in Sources */,
-				E116DD531DBE60A300BA812E /* Model.swift in Sources */,
-				E116DD4D1DBE5BCE00BA812E /* ModelProtocol.swift in Sources */,
-				E116DD551DBE63BB00BA812E /* JSONOperations.swift in Sources */,
-				E116DD511DBE5D7C00BA812E /* HttpOptions.swift in Sources */,
-				E12622561DC2145A00613DAD /* Model+Conectivity.swift in Sources */,
-				E119022C1DBF721D009C64FD /* ConnectionProtocols.swift in Sources */,
+				E1126F5C1DC349000035D89D /* ResponseMetadata.swift in Sources */,
+				E1126F571DC346330035D89D /* Collection.swift in Sources */,
+				E1126F421DC3447B0035D89D /* Model.swift in Sources */,
+				E1126F401DC3439D0035D89D /* Model+Fetchable.swift in Sources */,
+				E1126F471DC345540035D89D /* Errors.swift in Sources */,
+				E1126F501DC3459C0035D89D /* ModelProtocol.swift in Sources */,
+				E1700CEF1DC3573000C9A73B /* Collection+Fetchable.swift in Sources */,
+				E1126F551DC346260035D89D /* Model+JSONRepresentable.swift in Sources */,
+				E1126F4E1DC345640035D89D /* HTTPProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,10 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E116DD411DBE582B00BA812E /* BackboneSwiftTests.swift in Sources */,
 				E11902291DBF5D9F009C64FD /* SUT.swift in Sources */,
 				E12622511DC0DABF00613DAD /* TestDataSource.swift in Sources */,
 				E11902271DBF5C11009C64FD /* ModelTests.swift in Sources */,
+				E1700CF51DC35E4A00C9A73B /* CollectionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

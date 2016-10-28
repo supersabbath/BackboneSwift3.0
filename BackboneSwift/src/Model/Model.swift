@@ -14,6 +14,7 @@ import Alamofire
 
 open class Model: NSObject , ModelProtocol , JsonRepresentable {
    
+ 
     open var url:String?
     
     required override public init() {

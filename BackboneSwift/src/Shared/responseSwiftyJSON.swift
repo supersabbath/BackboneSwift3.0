@@ -15,15 +15,14 @@ import SwiftyJSON
 
 extension DataRequest {
  
-    
     /**
      Adds a handler to be called once the request has finished.
+     -parameters:
+        -parameter: queue The queue on which the completion handler is dispatched.
+        -parameter: options The JSON serialization reading options. `.AllowFragments` by default.
+        -parameter: completionHandler A closure to be executed once the request has finished. The closure takes 4 arguments: the URL request, the URL response, if one was received, the SwiftyJSON enum, if one could be created from the URL response and data, and any error produced while creating the SwiftyJSON enum.
      
-     :param: queue The queue on which the completion handler is dispatched.
-     :param: options The JSON serialization reading options. `.AllowFragments` by default.
-     :param: completionHandler A closure to be executed once the request has finished. The closure takes 4 arguments: the URL request, the URL response, if one was received, the SwiftyJSON enum, if one could be created from the URL response and data, and any error produced while creating the SwiftyJSON enum.
-     
-     :returns: The request.
+     -returns: The request.
      */
     
     @discardableResult

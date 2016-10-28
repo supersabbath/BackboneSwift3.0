@@ -9,38 +9,44 @@
 import Foundation
 import Alamofire
 
+public typealias ResponseTuple =  (result:BaseObjectProtocol,metadata: ResponseMetadata)
+
 public protocol ConnectivityProtocol  {
-    
- func synch<T:ModelProtocol>(_ caller:T?,  modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions?, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void)
+
+ func synch<T:BaseObjectProtocol>(_ caller:T?,  modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions?, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void)
     
   func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void)
 }
 
-extension ConnectivityProtocol where Self:Model {
+extension ConnectivityProtocol  {
  
-    public func synch<T:ModelProtocol>(_ caller:T? , modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
+    public func synch<T:BaseObjectProtocol>(_ caller:T? , modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
         
         Alamofire.request(modelURL, method: method , parameters: options?.body , headers: options?.headers ).validate(statusCode: 200..<500).responseSwiftyJSON(completionHandler: {  (dataResponse, jsonObject) in
             
             guard let weakSelf = caller else { return } // avoid retain cycle and Async callback crashes
-            guard let httpStatus = dataResponse.response?.statusCode else {
+            guard let response = dataResponse.response  else {
                 onError(BackboneError.httpError(description: "No http status code"))
                 return
             }
+            
+            let metadata = ResponseMetadata(httpResponse: response, fromCache: false)
+            
             guard let json = jsonObject else {
-                switch httpStatus {
+                switch response.statusCode {
                 case 200..<399:
-                    onSuccess((weakSelf, dataResponse.response))
+                  
+                    onSuccess((weakSelf, metadata))
                 default:
-                    onError(.httpError(description: "\(httpStatus)"))
+                    onError(.httpError(description: "\(response.statusCode)"))
                 }
                 return
             }
             
-            switch httpStatus {
+            switch response.statusCode {
             case 200..<299 :
                 weakSelf.parse(json)
-                onSuccess((weakSelf , dataResponse.response))
+                onSuccess((weakSelf , metadata))
                 
             case 400..<499:
                 let errorDictionary = json.dictionaryObject as! [String : AnyObject]
@@ -69,7 +75,6 @@ extension ConnectivityProtocol where Self:Model {
         }
         complete(inOptions , urlComponents)
     }
-        
 }
 
  

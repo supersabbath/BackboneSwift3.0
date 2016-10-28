@@ -185,8 +185,8 @@ class ModelTests: XCTestCase {
         let asyncExpectation = expectation(description: "testSyncShouldReturnHTTPErrorFor3xx")
         
         sut.fetch(onSuccess: { (result) in
-            XCTAssertNotNil(result.model)
-            XCTAssertEqual( result.response!.statusCode , 304)
+            XCTAssertNotNil(result.result)
+            XCTAssertEqual( result.metadata.httpStatus , 304)
             asyncExpectation.fulfill()
         }){ (error) -> Void in
             XCTFail()
@@ -210,7 +210,7 @@ class ModelTests: XCTestCase {
         //when
         sut.delete().then { (result) -> Void in
             //then
-            XCTAssertTrue(result.response?.statusCode == 200)
+            XCTAssertTrue(result.metadata.httpStatus == 200)
             asyncExpectation.fulfill()
         }.catch { (err) in
                 XCTFail()
@@ -228,11 +228,10 @@ class ModelTests: XCTestCase {
         sut.url = "http://httpbin.org/put"
         sut.dummyJuanCarlos = "jayC"
         sut.dummyBoolean = true
-
         //when
         sut.save().then { (result) -> Void in
             //then
-            XCTAssertTrue(result.response?.statusCode == 200)
+            XCTAssertTrue(result.metadata.httpStatus == 200)
            
             asyncExpectation.fulfill()
             }.catch { (err) in
@@ -252,9 +251,9 @@ class ModelTests: XCTestCase {
         sut.dummyJuanCarlos = "jayC"
         sut.dummyBoolean = true
         //when
-        sut.create().then { (result) -> Void in
+        sut.create().then { (resultTuple) -> Void in
             //then
-            XCTAssertTrue(result.response?.statusCode == 200)
+            XCTAssertTrue(resultTuple.metadata.httpStatus == 200)
             asyncExpectation.fulfill()
             }.catch { (err) in
                 XCTFail()

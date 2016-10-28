@@ -12,11 +12,19 @@ import PromiseKit
 import Alamofire
 
 
-public typealias ResponseTuple =  (model:ModelProtocol,response: HTTPURLResponse?)
-public typealias JSONDictionary = [String:AnyObject]
 
-public protocol ModelProtocol :  Fetchable, Deletable , Savable , Creatable
+//public typealias CollectionResponse = (models:[GenericModel], response:ResponseMetadata)
+
+public protocol ModelProtocol : BaseObjectProtocol, Fetchable, Deletable , Savable , Creatable
 {
+    init() // ??
+}
+
+
+
+
+public protocol  BaseObjectProtocol {
+
     /**
      - *url*  the relative URL where the model's resource would be located on the server. If your models are located somewhere else, override this method with the correct logic. Generates URLs of the form: "[collection.url]/[id]" by default, but you may override by specifying an explicit urlRoot if the model's collection shouldn't be taken into account.
      */
@@ -27,9 +35,5 @@ public protocol ModelProtocol :  Fetchable, Deletable , Savable , Creatable
      */
     func parse(_ response: JSON)
     func toJSON() -> String?
-    init()
 }
-
-
-
 
