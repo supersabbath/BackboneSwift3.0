@@ -23,9 +23,10 @@ open class ProjectSUT : Model {
     
 }
 
-open class VideoCollectionSUT : VideoSUT {
+open class VideoCollectionSUT : Model {
     
     var contentType : String?
+    var htmlUrl : String?
 }
 
 

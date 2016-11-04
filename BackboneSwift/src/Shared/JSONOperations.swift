@@ -10,7 +10,7 @@ import UIKit
 
 public struct JSONOperations {
     
-    public func JSONFromBytes(_ bytes: Data ) -> AnyObject?
+   static public func JSONFromBytes(_ bytes: Data ) -> AnyObject?
     {
         let options = JSONSerialization.ReadingOptions(rawValue: 0)
         do {

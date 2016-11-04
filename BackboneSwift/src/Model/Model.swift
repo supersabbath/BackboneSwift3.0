@@ -64,7 +64,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     internal func reflexion(json: JSON , mirror:Mirror) {
         
         for case let (varName? , value ) in mirror.children {
-            
+
             if responds(to:Selector(varName)) {
                 
                 if let className = self.className(for: value) ,  !isSwiftBasicType(className: className) {

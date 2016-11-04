@@ -7,33 +7,54 @@
 //
 
 import XCTest
+import BackboneSwift
+import SwiftyJSON
 
 @testable import BackboneSwift
 
 class CollectionTest: XCTestCase {
     
-   
+    var sut:BaseCollection<VideoCollectionSUT>!
     
     override func setUp() {
         super.setUp()
-        let m = Model()
-      
+        let model = VideoCollectionSUT()
+        sut = BaseCollection<VideoCollectionSUT>(baseUrl :"")
+        sut.push(model)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
-            // Put the code you want to measure the time of here.
+            if let jsonObject = TestDataSource().jsonVideo {
+                self.sut.parse(jsonObject)
+            }
+        }
+    }
+    
+    func testPush(){
+        XCTAssertTrue(sut.models.count == 1, "should  have one and has: \(sut.models.count)")
+    }
+    
+    
+    func testFecth() {
+ 
+        if let jsonObject = TestDataSource().jsonVideo {
+
+            sut.parse(jsonObject)
+            XCTAssertEqual(sut.models.count , 2)
+            let video = sut.pop()
+            XCTAssertEqual(sut.models.count , 1)
+            XCTAssertEqual(video?.contentType , "video")
+            XCTAssertTrue((video?.htmlUrl?.hasPrefix("http://www.rtve.es/alacarta/videos/"))! )
+        } else {
+            XCTFail()
         }
     }
     

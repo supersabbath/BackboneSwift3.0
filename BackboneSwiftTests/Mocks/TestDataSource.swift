@@ -21,4 +21,15 @@ struct TestDataSource {
         firstLevel["customValue"] = "value"
         return JSON(firstLevel)
     }
+    
+    var jsonVideo : JSON? {
+        
+        let bundle = Bundle(identifier: "com.starzplayarabia.BackboneSwiftTests")
+        let jsonPath = bundle?.path(forResource: "videos", ofType: "json")
+        guard let path = jsonPath , let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            return nil
+        }
+        let jsonObject = JSONOperations.JSONFromBytes(data)
+        return JSON(jsonObject)
+    }
 }
