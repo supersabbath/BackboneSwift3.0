@@ -27,6 +27,7 @@ public protocol Fetchable : ConnectivityProtocol {
      - Return: Promise
      - See: ResponseTuple
      */
+    @discardableResult
     func fetch(_ options:HttpOptions?) -> Promise <ResponseTuple>
     func fetch(_ options:HttpOptions? , onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void)
 }
@@ -36,6 +37,7 @@ public protocol Fetchable : ConnectivityProtocol {
 
 public protocol Deletable : ConnectivityProtocol  {
     // Performs the DELETE http methdo
+    @discardableResult
     func delete(_ options:HttpOptions?) -> Promise < ResponseTuple >
     func delete(_ options:HttpOptions? , onSuccess:@escaping (ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
     

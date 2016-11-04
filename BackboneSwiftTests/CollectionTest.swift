@@ -14,17 +14,17 @@ import SwiftyJSON
 
 class CollectionTest: XCTestCase {
     
-    var sut:BaseCollection<VideoCollectionSUT>!
+    var collectionSUT:BaseCollection<VideoCollectionSUT>!
     
     override func setUp() {
         super.setUp()
         let model = VideoCollectionSUT()
-        sut = BaseCollection<VideoCollectionSUT>(baseUrl :"")
-        sut.push(model)
+        collectionSUT = BaseCollection<VideoCollectionSUT>(baseUrl :"")
+        collectionSUT.push(model)
     }
     
     override func tearDown() {
-        sut = nil
+        collectionSUT = nil
         super.tearDown()
     }
 
@@ -33,24 +33,29 @@ class CollectionTest: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             if let jsonObject = TestDataSource().jsonVideo {
-                self.sut.parse(jsonObject)
+                self.collectionSUT.parse(jsonObject)
             }
         }
     }
     
     func testPush(){
-        XCTAssertTrue(sut.models.count == 1, "should  have one and has: \(sut.models.count)")
+        XCTAssertTrue(collectionSUT.models.count == 1, "should  have one and has: \(collectionSUT.models.count)")
     }
     
+    func testPop() {
+        collectionSUT?.pop()
+        collectionSUT?.pop()
+        XCTAssertTrue(collectionSUT!.models.count == 0, "should  have one and has: \(collectionSUT?.models.count)")
+    }
     
-    func testFecth() {
+    func testParse() {
  
         if let jsonObject = TestDataSource().jsonVideo {
 
-            sut.parse(jsonObject)
-            XCTAssertEqual(sut.models.count , 2)
-            let video = sut.pop()
-            XCTAssertEqual(sut.models.count , 1)
+            collectionSUT.parse(jsonObject)
+            XCTAssertEqual(collectionSUT.models.count , 2)
+            let video = collectionSUT.pop()
+            XCTAssertEqual(collectionSUT.models.count , 1)
             XCTAssertEqual(video?.contentType , "video")
             XCTAssertTrue((video?.htmlUrl?.hasPrefix("http://www.rtve.es/alacarta/videos/"))! )
         } else {
@@ -58,4 +63,39 @@ class CollectionTest: XCTestCase {
         }
     }
     
+    
+    func testGithubAPI_Promisefy (){
+    
+        let asyncExpectation = expectation(description: "testGithubAPI_Promisefy")
+        let sutCollection = BaseCollection <ProjectSUT>(baseUrl:  "https://api.github.com/users/google/repos?page=1&per_page=7")
+        
+        sutCollection.fetch().then { (response) -> Void in
+            XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
+            XCTAssertTrue(sutCollection.models.count !=  7, "should have the same number")
+            asyncExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 10, handler:{ (error) in
+            print("time out")
+        });
+    }
+
+    
+    func testGithubAPI (){
+        
+        let asyncExpectation = expectation(description: "testGithubAPI")
+        let sutCollection = BaseCollection <ProjectSUT>(baseUrl: "https://api.github.com/users/google/repos")
+        let options = HttpOptions(queryString: "page=1&per_page=7")
+        sutCollection.fetch(options, onSuccess: { (objs) -> Void in
+            XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
+            XCTAssertTrue(sutCollection.models.count !=  7, "should have the same number")
+            asyncExpectation.fulfill()
+            }, onError:{ (error) -> Void in
+                XCTFail()
+        })
+        self.waitForExpectations(timeout: 10, handler:{ (error) in
+            print("time out")
+        });
+    }
+ 
 }
