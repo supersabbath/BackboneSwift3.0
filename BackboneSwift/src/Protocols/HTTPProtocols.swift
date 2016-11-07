@@ -67,8 +67,6 @@ extension Fetchable {
         
         guard let delegate = delegate , cacheID != nil else { return nil }
         let cachedResponse = delegate.requestCache.object(forKey: cacheID! as NSString)
-         debugPrint("retriving from cache \(cacheID!)")
-            debugPrint(cachedResponse.debugDescription)
         let jsonObject = JSON(cachedResponse)
         return jsonObject
     }

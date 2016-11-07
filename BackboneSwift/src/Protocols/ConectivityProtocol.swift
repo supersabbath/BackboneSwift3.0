@@ -80,7 +80,7 @@ extension ConnectivityProtocol where Self : BaseObjectProtocol   {
     
     public func processCache(usingOptions options : HttpOptions? , json :JSON , absoluteURL:URLConvertible , andMethod method:HTTPMethod) {
         guard let opts = options ,  opts.useCache == true , cacheDelegate != nil else  {
-             print("[ConnectivityProtocol where Self BaseObject]  Missing Parameter for cache ")
+             debugPrint("[ConnectivityProtocol where Self BaseObject]  Missing Parameter for cache ")
             return
         }
         do  {
@@ -88,7 +88,6 @@ extension ConnectivityProtocol where Self : BaseObjectProtocol   {
             switch method {
                 case .get:
                     cacheDelegate?.requestCache.setObject(json.rawValue as AnyObject, forKey:key as NSString)
-                    debugPrint("adding to cache \(key)")
                 default:
                     debugPrint("[ConnectivityProtocol where Self BaseObject] cache will only be use for http GET")
             }
