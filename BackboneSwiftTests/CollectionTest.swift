@@ -43,8 +43,8 @@ class CollectionTest: XCTestCase {
     }
     
     func testPop() {
-        collectionSUT?.pop()
-        collectionSUT?.pop()
+        _  = collectionSUT?.pop()
+        _ = collectionSUT?.pop()
         XCTAssertTrue(collectionSUT!.models.count == 0, "should  have one and has: \(collectionSUT?.models.count)")
     }
     
@@ -68,11 +68,14 @@ class CollectionTest: XCTestCase {
     
         let asyncExpectation = expectation(description: "testGithubAPI_Promisefy")
         let sutCollection = BaseCollection <ProjectSUT>(baseUrl:  "https://api.github.com/users/google/repos?page=1&per_page=7")
-        
+   
         sutCollection.fetch().then { (response) -> Void in
+            _ = response.result as? BaseCollection<ProjectSUT>
             XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
             XCTAssertTrue(sutCollection.models.count !=  7, "should have the same number")
             asyncExpectation.fulfill()
+        }.catch { (error) in
+            XCTFail()
         }
         
         self.waitForExpectations(timeout: 10, handler:{ (error) in
@@ -86,7 +89,7 @@ class CollectionTest: XCTestCase {
         let asyncExpectation = expectation(description: "testGithubAPI")
         let sutCollection = BaseCollection <ProjectSUT>(baseUrl: "https://api.github.com/users/google/repos")
         let options = HttpOptions(queryString: "page=1&per_page=7")
-        sutCollection.fetch(options, onSuccess: { (objs) -> Void in
+        sutCollection.fetch(usingOptions: options, onSuccess: { (objs) -> Void in
             XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
             XCTAssertTrue(sutCollection.models.count !=  7, "should have the same number")
             asyncExpectation.fulfill()

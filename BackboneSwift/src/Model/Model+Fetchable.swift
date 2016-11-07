@@ -13,10 +13,10 @@ import PromiseKit
 
 extension Fetchable where Self : Model {
     
-    public func fetch(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+    public func fetch(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         return Promise(resolvers: { (fulfill, reject) in
             
-            fetch(options, onSuccess: { (response) in
+            fetch(usingOptions:options, onSuccess: { (response) in
                 fulfill(response)
                 }, onError: { (error) in
                     reject(error)
@@ -26,7 +26,7 @@ extension Fetchable where Self : Model {
     
     
     
-    public func fetch(_ options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void){
+    public func fetch(usingOptions options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void){
         
         guard let feedURL = url  else {
             debugPrint("Collections must have an URL, fetch cancelled")

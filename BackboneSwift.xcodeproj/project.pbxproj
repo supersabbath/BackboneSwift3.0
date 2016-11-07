@@ -227,9 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */,
+				E108F4081DCCF29200C956CE /* Model+Savable.swift */,
 				E12622531DC2143A00613DAD /* Model+Creatable.swift */,
 				E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */,
-				E108F4081DCCF29200C956CE /* Model+Savable.swift */,
 				E108F40A1DCCF39700C956CE /* Model+Deletable.swift */,
 			);
 			name = "Model+Extensions";

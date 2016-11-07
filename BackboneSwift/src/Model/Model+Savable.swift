@@ -13,10 +13,10 @@ import PromiseKit
 
 extension Savable where Self : Model {
     
-    public func save(_ options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+    public func save(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         
         return Promise {  fulfill, reject in
-            save(options, onSuccess: { (result) -> Void in
+            save(usingOptions: options, onSuccess: { (result) -> Void in
                 fulfill(result)
             }) { (error) -> Void in
                 reject (error )
@@ -24,7 +24,7 @@ extension Savable where Self : Model {
         }
     }
     
-    public func save(_ options: HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) -> Void, onError: @escaping (BackboneError) -> Void) {
+    public func save(usingOptions options: HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) -> Void, onError: @escaping (BackboneError) -> Void) {
         guard let feedURL = url  else {
             print("Models must have an URL, fetch cancelled")
             onError(.invalidURL)

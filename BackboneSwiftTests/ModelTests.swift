@@ -111,8 +111,8 @@ class ModelTests: XCTestCase {
         let url = "http://link.theplatform.eu/s"
         sut.url = url
         let asyncExpectation = expectation(description: "withJSONIfResponseReturnsJSON")
-        
-        sut.fetch(nil).then { (response) -> Void in
+    
+        sut.fetch().then { (response) -> Void in
            XCTFail()
         }.catch { (error) in
             switch error as! BackboneError {

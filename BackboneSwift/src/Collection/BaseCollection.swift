@@ -66,7 +66,7 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
     }
 
     /**
-    Add a model at the end of a collection. Takes the same options as add.
+     Add a model at the end of a collection. Takes the same options as add.
     */
     open  func push(_ item: GenericModel) {
         models.append(item)
@@ -76,8 +76,7 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
     /**
      Remove and return the last model from a collection. TODO: [Takes the same options as remove.]
     */
-    @discardableResult
-    open  func pop() -> GenericModel? {
+    @discardableResult open  func pop() -> GenericModel? {
         if (models.count > 0) {
             return models.removeLast()
         } else {
@@ -86,7 +85,6 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
     }
 
     // MARK: Collections Cache
-    
     fileprivate func addResponseToCache(_ json :AnyObject, cacheID:String) {
         
         if let d = delegate {

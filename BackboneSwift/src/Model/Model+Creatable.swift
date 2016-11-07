@@ -10,9 +10,9 @@ import PromiseKit
 
 extension Creatable where Self:Model {
 
-    public func create(_ options:HttpOptions? = nil) -> Promise <ResponseTuple> {
+    public func create(usingOptions options:HttpOptions? = nil) -> Promise <ResponseTuple> {
         return Promise {  fulfill, reject in
-            create(options, onSuccess: { (result) -> Void in
+            create(usingOptions: options, onSuccess: { (result) -> Void in
                 fulfill(result)
                 }, onError: { (error) -> Void in
                     reject (error )
@@ -20,7 +20,7 @@ extension Creatable where Self:Model {
         }
     }
     
-    public func create(_ options:HttpOptions?  = nil , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void) {
+    public func create(usingOptions options:HttpOptions?  = nil , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void) {
         guard let feedURL = url  else {
             print("Models must have an URL, fetch cancelled")
             onError(.invalidURL)

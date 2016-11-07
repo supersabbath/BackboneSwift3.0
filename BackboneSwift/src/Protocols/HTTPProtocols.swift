@@ -28,8 +28,8 @@ public protocol Fetchable : ConnectivityProtocol {
      - See: ResponseTuple
      */
     @discardableResult
-    func fetch(_ options:HttpOptions?) -> Promise <ResponseTuple>
-    func fetch(_ options:HttpOptions? , onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void)
+    func fetch(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func fetch(usingOptions options:HttpOptions? , onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void)
 }
 
 
@@ -38,8 +38,8 @@ public protocol Fetchable : ConnectivityProtocol {
 public protocol Deletable : ConnectivityProtocol  {
     // Performs the DELETE http methdo
     @discardableResult
-    func delete(_ options:HttpOptions?) -> Promise < ResponseTuple >
-    func delete(_ options:HttpOptions? , onSuccess:@escaping (ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
+    func delete(usingOptions options:HttpOptions?) -> Promise < ResponseTuple >
+    func delete(usingOptions options:HttpOptions? , onSuccess:@escaping (ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
     
 }
 
@@ -49,15 +49,15 @@ public protocol Savable : ConnectivityProtocol {
         Save () a model to your server
      
      */
-    func save(_ options:HttpOptions?) -> Promise <ResponseTuple>
-    func save(_ options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
+    func save(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func save(usingOptions options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
     
 }
 
 
 public protocol Creatable : ConnectivityProtocol{
     
-    func create(_ options:HttpOptions?) -> Promise <ResponseTuple>
-    func create(_ options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void)
+    func create(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func create(usingOptions options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void)
     
 }
