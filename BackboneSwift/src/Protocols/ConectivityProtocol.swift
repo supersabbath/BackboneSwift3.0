@@ -8,17 +8,21 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
+
 
 public typealias ResponseTuple =  (result:BaseObjectProtocol,metadata: ResponseMetadata)
 
-public protocol ConnectivityProtocol  {
+public protocol ConnectivityProtocol {
 
  func synch<T:BaseObjectProtocol>(_ caller:T?,  modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions?, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void)
     
-  func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void)
+    func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLComponents) -> Void)
+    
+    func processCache(usingOptions options : HttpOptions? , json :JSON , absoluteURL:URLConvertible ,andMethod method:HTTPMethod)
 }
 
-extension ConnectivityProtocol  {
+extension ConnectivityProtocol where Self : BaseObjectProtocol   {
  
     public func synch<T:BaseObjectProtocol>(_ caller:T? , modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
         
@@ -35,7 +39,6 @@ extension ConnectivityProtocol  {
             guard let json = jsonObject else {
                 switch response.statusCode {
                 case 200..<399:
-                  
                     onSuccess((weakSelf, metadata))
                 default:
                     onError(.httpError(description: "\(response.statusCode)"))
@@ -45,6 +48,7 @@ extension ConnectivityProtocol  {
             
             switch response.statusCode {
             case 200..<299 :
+                self.processCache(usingOptions: options, json: json , absoluteURL:modelURL , andMethod:method)
                 weakSelf.parse(json)
                 onSuccess((weakSelf , metadata))
                 
@@ -58,15 +62,13 @@ extension ConnectivityProtocol  {
     }
 
     
-    public func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLConvertible) -> Void) {
+    public func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLComponents) -> Void) {
         
         var urlComponents = URLComponents(string:baseUrl)!
-        
         if let query = inOptions?.query{
             urlComponents.query = query
         }
         if let path = inOptions?.relativePath  {
-            
             if  urlComponents.path.characters.count == 0 {
                 urlComponents.path = "\(urlComponents.path)/\(path)"
             }else {
@@ -75,6 +77,26 @@ extension ConnectivityProtocol  {
         }
         complete(inOptions , urlComponents)
     }
+    
+    public func processCache(usingOptions options : HttpOptions? , json :JSON , absoluteURL:URLConvertible , andMethod method:HTTPMethod) {
+        guard let opts = options ,  opts.useCache == true , cacheDelegate != nil else  {
+             print("[ConnectivityProtocol where Self BaseObject]  Missing Parameter for cache ")
+            return
+        }
+        do  {
+            let key =  try absoluteURL.asURL().absoluteString
+            switch method {
+                case .get:
+                    cacheDelegate?.requestCache.setObject(json.rawValue as AnyObject, forKey:key as NSString)
+                    debugPrint("adding to cache \(key)")
+                default:
+                    debugPrint("[ConnectivityProtocol where Self BaseObject] cache will only be use for http GET")
+            }
+       
+        } catch {
+                print("invalid key for cache")
+        }
+    }
 }
 
- 
+

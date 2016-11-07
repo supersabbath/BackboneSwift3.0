@@ -30,6 +30,7 @@
 		E12622511DC0DABF00613DAD /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622501DC0DABF00613DAD /* TestDataSource.swift */; };
 		E12622521DC0F77000613DAD /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
 		E12622541DC2143A00613DAD /* Model+Creatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622531DC2143A00613DAD /* Model+Creatable.swift */; };
+		E15A384E1DD0C0D700EE496B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A384D1DD0C0D700EE496B /* Mocks.swift */; };
 		E1700CEF1DC3573000C9A73B /* Collection+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */; };
 		E1700CF51DC35E4A00C9A73B /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */; };
 		E1700CF71DC3611700C9A73B /* BaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF61DC3611700C9A73B /* BaseCollection.swift */; };
@@ -76,6 +77,7 @@
 		E11902281DBF5D9F009C64FD /* SUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SUT.swift; path = Mocks/SUT.swift; sourceTree = "<group>"; };
 		E12622501DC0DABF00613DAD /* TestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDataSource.swift; path = Mocks/TestDataSource.swift; sourceTree = "<group>"; };
 		E12622531DC2143A00613DAD /* Model+Creatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Creatable.swift"; path = "src/Model/Model+Creatable.swift"; sourceTree = "<group>"; };
+		E15A384D1DD0C0D700EE496B /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = Mocks/Mocks.swift; sourceTree = "<group>"; };
 		E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection+Fetchable.swift"; path = "src/Collection/Collection+Fetchable.swift"; sourceTree = "<group>"; };
 		E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 		E1700CF61DC3611700C9A73B /* BaseCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollection.swift; path = src/Collection/BaseCollection.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E11902281DBF5D9F009C64FD /* SUT.swift */,
+				E15A384D1DD0C0D700EE496B /* Mocks.swift */,
 			);
 			name = SUT;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				E12622511DC0DABF00613DAD /* TestDataSource.swift in Sources */,
 				E11902271DBF5C11009C64FD /* ModelTests.swift in Sources */,
 				E1700CF51DC35E4A00C9A73B /* CollectionTest.swift in Sources */,
+				E15A384E1DD0C0D700EE496B /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

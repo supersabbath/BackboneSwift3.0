@@ -10,6 +10,9 @@ import XCTest
 
 @testable import BackboneSwift
 import SwiftyJSON
+import PromiseKit
+
+
 
 class ModelTests: XCTestCase {
     
@@ -140,7 +143,7 @@ class ModelTests: XCTestCase {
         sut.fetch(onSuccess: { (response) in
             XCTAssertNil(self.sut.dummyString) // should be nil
              asyncExpectation.fulfill()
-        
+
         }) { (backboneError) in
                 switch backboneError {
                 case .parsingError:
@@ -259,6 +262,38 @@ class ModelTests: XCTestCase {
                 XCTFail()
                 asyncExpectation.fulfill()
         }
+        self.waitForExpectations(timeout: 100, handler:{ (error) in
+            print("test time out")
+        });
+    }
+    
+    func testCache() {
+
+        let cacheHandlerMock = MockCache()
+        
+        let asyncExpectation = expectation(description: "testCache")
+        
+        let videoSut = VideoSUT();
+        videoSut.url  = "http://www.rtve.es/api/videos.json?size=1"
+        videoSut.cacheDelegate = cacheHandlerMock
+        var opts =  HttpOptions()
+        opts.useCache = true
+
+        videoSut.fetch(usingOptions: opts).then { (response) ->  Promise<ResponseTuple>  in
+        
+            XCTAssertFalse(response.metadata.isCacheResult)
+            return videoSut.fetch(usingOptions: opts)
+            
+        }.then { (reponseTuple) -> Void in
+            
+            XCTAssertTrue(reponseTuple.metadata.isCacheResult)
+            let language = (reponseTuple.result as! VideoSUT).language
+            XCTAssertEqual(language, "es")
+            asyncExpectation.fulfill()
+        }.catch { (error) in
+            XCTFail()
+        }
+        
         self.waitForExpectations(timeout: 100, handler:{ (error) in
             print("test time out")
         });

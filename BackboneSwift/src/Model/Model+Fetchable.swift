@@ -9,13 +9,12 @@
 import Foundation
 import Alamofire
 import PromiseKit
-
+import SwiftyJSON
 
 extension Fetchable where Self : Model {
     
     public func fetch(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         return Promise(resolvers: { (fulfill, reject) in
-            
             fetch(usingOptions:options, onSuccess: { (response) in
                 fulfill(response)
                 }, onError: { (error) in
@@ -33,8 +32,20 @@ extension Fetchable where Self : Model {
             onError(.invalidURL)
             return
         }
-        processOptions(feedURL, inOptions: options  , complete: { [weak self] (options, processedURL) in
-            self?.synch(self , modelURL: processedURL, method: .get, options: options,onSuccess: onSuccess, onError: onError)
-            })
+        processOptions(feedURL, inOptions: options) { [weak self] (options, processedURL) in
+            
+            guard self != nil else { return }
+    
+            let json = self!.jsonFromCache(askDelegate: self!.cacheDelegate , forID:processedURL.url?.absoluteString)
+            if json?.isEmpty == false {
+                self!.parse(json!)
+                let metadata = ResponseMetadata(fromCache: true)
+                onSuccess((result:self! , metadata:metadata))
+                
+            } else {
+                self!.synch(self , modelURL: processedURL, method: .get, options: options,onSuccess: onSuccess, onError: onError)
+            }
+        }
     }
 }
+

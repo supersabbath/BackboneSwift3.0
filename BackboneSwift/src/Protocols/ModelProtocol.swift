@@ -12,8 +12,10 @@ import PromiseKit
 import Alamofire
 
 
+
 public protocol ModelProtocol : BaseObjectProtocol, Fetchable, Deletable , Savable , Creatable
 {
+
     init() // ??
 }
 
@@ -29,5 +31,14 @@ public protocol  BaseObjectProtocol {
      */
     func parse(_ response: JSON)
     func toJSON() -> String?
+    /**
+        concurrencyDelegate should bpr the response queue where the callback should be performed
+     */
+    var concurrencyDelegate: BackboneCacheDelegate? { get set }
+    /**
+        cacheDelegate provides a Cache implementation for the requests
+     */
+    var cacheDelegate: BackboneCacheDelegate? { get set }
 }
+
 

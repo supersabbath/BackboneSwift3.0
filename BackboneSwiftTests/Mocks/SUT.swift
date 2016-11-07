@@ -14,7 +14,7 @@ import PromiseKit
 
 /**
  
-    SUT Classes for CollectionTest
+ SUT Classes for CollectionTest
  */
 open class ProjectSUT : Model {
     
@@ -31,14 +31,14 @@ open class VideoCollectionSUT : Model {
 
 
 /**************************************************************
-
-    SUTs:  USED in MODEL test TestClass and VideoSUT
+ 
+ SUTs:  USED in MODEL test TestClass and VideoSUT
  
  */
 open class JayCDumpClass : Model {
-     var dummyString:String?
-     var dummyJuanCarlos:String?
-     var dummyBoolean: Bool = false
+    var dummyString:String?
+    var dummyJuanCarlos:String?
+    var dummyBoolean: Bool = false
 }
 
 open class VideoSUT : Model {
@@ -48,7 +48,7 @@ open class VideoSUT : Model {
     
     open override func parse(_ response: JSON) {
         if let videdDic = response["page"]["items"].arrayValue.first {
-          super.parse(videdDic)
+            super.parse(videdDic)
         }
     }
 }

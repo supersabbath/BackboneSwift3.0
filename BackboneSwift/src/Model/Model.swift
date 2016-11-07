@@ -13,6 +13,11 @@ import Alamofire
 
 
 open class Model: NSObject , ModelProtocol , JsonRepresentable {
+    /**
+     cacheDelegate provides a Cache implementation for the requests
+     */
+    public var cacheDelegate: BackboneCacheDelegate?
+    public var concurrencyDelegate: BackboneCacheDelegate?
    
  
     open var url:String?

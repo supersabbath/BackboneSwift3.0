@@ -9,6 +9,7 @@
 import XCTest
 import BackboneSwift
 import SwiftyJSON
+import PromiseKit
 
 @testable import BackboneSwift
 
@@ -97,6 +98,34 @@ class CollectionTest: XCTestCase {
                 XCTFail()
         })
         self.waitForExpectations(timeout: 10, handler:{ (error) in
+            print("time out")
+        });
+    }
+    
+    func testCacheRequestShouldSucced () {
+        let cacheMock = MockCache()
+        let asyncExpectation = expectation(description: "testCacheRequest")
+        let sutCollection = BaseCollection <ProjectSUT>(baseUrl: "https://api.github.com/users/google/repos")
+        sutCollection.cacheDelegate = cacheMock
+        var options = HttpOptions(queryString: "page=1&per_page=3")
+        options.useCache = true
+        var options2 = HttpOptions(queryString: "page=1&per_page=3")
+        options2.useCache = true
+        sutCollection.fetch(usingOptions:options).then { (response) -> Promise<ResponseTuple> in
+
+            return sutCollection.fetch(usingOptions:options2)
+        }.then { (response) -> Void in
+            
+            XCTAssertTrue(response.metadata.isCacheResult)
+            XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
+            XCTAssertTrue(sutCollection.models.count !=  3, "should have the same number")
+            asyncExpectation.fulfill()
+        }.catch { error in
+           XCTFail()
+        }
+            
+     
+        self.waitForExpectations(timeout: 60, handler:{ (error) in
             print("time out")
         });
     }

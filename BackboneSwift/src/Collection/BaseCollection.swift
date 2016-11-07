@@ -24,7 +24,8 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
    
     open var models = [GenericModel]()
     public var url:String?
-    open var delegate:BackboneDelegate?
+    public var concurrencyDelegate: BackboneCacheDelegate?
+    public var cacheDelegate: BackboneCacheDelegate?
     
     public init(baseUrl url:String) {
         self.url = url
@@ -84,26 +85,9 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
         }
     }
 
-    // MARK: Collections Cache
-    fileprivate func addResponseToCache(_ json :AnyObject, cacheID:String) {
-        
-        if let d = delegate {
-            d.requestCache().setObject(json, forKey: cacheID as AnyObject)
-        }
-    }
-
+   // MARK: Collections Cache
+    // 
     
-    fileprivate func getJSONFromCache(_ cacheID:String) -> AnyObject? {
-    
-        if let d = delegate {
-            let json = d.requestCache().object(forKey: cacheID as AnyObject)
-            if let j = json {
-          
-                return j
-            }
-        }
-        return nil
-    }
 }
 
 
