@@ -121,7 +121,22 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     
     internal func objectForType(className: String) -> AnyObject? {
         
-        if let modelSubClass =  NSClassFromString("BackboneSwift."+className) as? NSObject.Type {
+        var module:String!
+        #if DEBUG
+            if Bundle.allBundles.count > 1 {
+                module = "BackboneSwiftTests"
+            } else {
+                guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
+                module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
+            }
+           
+        #else
+            guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
+             module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
+        #endif
+        
+        
+        if let modelSubClass =  NSClassFromString("\(module).\(className)") as? NSObject.Type {
             let modelClass = type(of: Model())
             if modelSubClass.isSubclass(of:modelClass) {
                 return modelSubClass.init()

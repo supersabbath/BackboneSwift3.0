@@ -27,7 +27,6 @@
 		E11902271DBF5C11009C64FD /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902261DBF5C11009C64FD /* ModelTests.swift */; };
 		E11902291DBF5D9F009C64FD /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
 		E12622511DC0DABF00613DAD /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622501DC0DABF00613DAD /* TestDataSource.swift */; };
-		E12622521DC0F77000613DAD /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
 		E12622541DC2143A00613DAD /* Model+Creatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622531DC2143A00613DAD /* Model+Creatable.swift */; };
 		E15A384E1DD0C0D700EE496B /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A384D1DD0C0D700EE496B /* Mocks.swift */; };
 		E15A38981DD0CEA600EE496B /* Model+Deletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A38971DD0CEA600EE496B /* Model+Deletable.swift */; };
@@ -79,6 +78,7 @@
 		E15A384D1DD0C0D700EE496B /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = Mocks/Mocks.swift; sourceTree = "<group>"; };
 		E15A384F1DD0C90A00EE496B /* BackboneSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BackboneSwift.podspec; sourceTree = "<group>"; };
 		E15A38971DD0CEA600EE496B /* Model+Deletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Deletable.swift"; path = "src/Model/Model+Deletable.swift"; sourceTree = "<group>"; };
+		E15A38991DD0E82200EE496B /* Config-Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-Test.xcconfig"; sourceTree = "<group>"; };
 		E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection+Fetchable.swift"; path = "src/Collection/Collection+Fetchable.swift"; sourceTree = "<group>"; };
 		E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 		E1700CF61DC3611700C9A73B /* BaseCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollection.swift; path = src/Collection/BaseCollection.swift; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 		E116DD281DBE582B00BA812E = {
 			isa = PBXGroup;
 			children = (
+				E15A38991DD0E82200EE496B /* Config-Test.xcconfig */,
 				E15A384F1DD0C90A00EE496B /* BackboneSwift.podspec */,
 				E116DD341DBE582B00BA812E /* BackboneSwift */,
 				E116DD3F1DBE582B00BA812E /* BackboneSwiftTests */,
@@ -451,7 +452,6 @@
 				E1126F4D1DC345640035D89D /* ConectivityProtocol.swift in Sources */,
 				E1126F4A1DC345540035D89D /* responseSwiftyJSON.swift in Sources */,
 				E1126F481DC345540035D89D /* HttpOptions.swift in Sources */,
-				E12622521DC0F77000613DAD /* SUT.swift in Sources */,
 				E1126F491DC345540035D89D /* JSONOperations.swift in Sources */,
 				E1126F591DC346EF0035D89D /* BackboneDelegates.swift in Sources */,
 				E12622541DC2143A00613DAD /* Model+Creatable.swift in Sources */,
@@ -646,6 +646,7 @@
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
 				INFOPLIST_FILE = BackboneSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starzplayarabia.BackboneSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
