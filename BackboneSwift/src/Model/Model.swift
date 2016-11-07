@@ -121,30 +121,37 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     
     internal func objectForType(className: String) -> AnyObject? {
         
-        var module:String!
-        #if DEBUG
+        var module:String
+        #if BB_TEST_TARGET // Will be only be execute on Backbone's Test Target
             if Bundle.allBundles.count > 1 {
                 module = "BackboneSwiftTests"
             } else {
                 guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
                 module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
             }
-           
+            
         #else
             guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
-             module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
+            module = (bundleIdentifier as NSString).pathExtension
         #endif
-        
-        
-        if let modelSubClass =  NSClassFromString("\(module).\(className)") as? NSObject.Type {
-            let modelClass = type(of: Model())
-            if modelSubClass.isSubclass(of:modelClass) {
-                return modelSubClass.init()
+            func makeInstance(_ module :String , _ className:String) -> AnyObject? {
+            
+                guard  let modelSubClass =  NSClassFromString("\(module).\(className)") as? NSObject.Type else {
+                    return nil
+                }
+            
+                let modelClass = type(of: Model())
+                if modelSubClass.isSubclass(of:modelClass) {
+                    return modelSubClass.init()
+                } else{
+                    return nil
             }
         }
-        return nil
+        
+        let newInstance = makeInstance(module, className) ?? makeInstance(module.replacingOccurrences(of: "-", with: "_"), className)
+        return newInstance
     }
-   
+    
     // MARK: -- Fetchable Protocol
     // see Model+Fetchable.swift
     

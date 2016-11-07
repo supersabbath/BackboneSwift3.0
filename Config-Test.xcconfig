@@ -1,9 +1,0 @@
-//
-//  Config-Test.xcconfig
-//  BackboneSwift
-//
-//  Created by Fernando Canon on 07/11/16.
-//  Copyright © 2016 Alphabit. All rights reserved.
-//
-#include "Pods/Target Support Files/Pods/Pods.debug.xcconfig"
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = TEST_UNIT
