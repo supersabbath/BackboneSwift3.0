@@ -78,6 +78,7 @@
 		E12622501DC0DABF00613DAD /* TestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDataSource.swift; path = Mocks/TestDataSource.swift; sourceTree = "<group>"; };
 		E12622531DC2143A00613DAD /* Model+Creatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Creatable.swift"; path = "src/Model/Model+Creatable.swift"; sourceTree = "<group>"; };
 		E15A384D1DD0C0D700EE496B /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mocks.swift; path = Mocks/Mocks.swift; sourceTree = "<group>"; };
+		E15A384F1DD0C90A00EE496B /* BackboneSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BackboneSwift.podspec; sourceTree = "<group>"; };
 		E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Collection+Fetchable.swift"; path = "src/Collection/Collection+Fetchable.swift"; sourceTree = "<group>"; };
 		E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 		E1700CF61DC3611700C9A73B /* BaseCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollection.swift; path = src/Collection/BaseCollection.swift; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 		E116DD281DBE582B00BA812E = {
 			isa = PBXGroup;
 			children = (
+				E15A384F1DD0C90A00EE496B /* BackboneSwift.podspec */,
 				E116DD341DBE582B00BA812E /* BackboneSwift */,
 				E116DD3F1DBE582B00BA812E /* BackboneSwiftTests */,
 				E116DD331DBE582B00BA812E /* Products */,
