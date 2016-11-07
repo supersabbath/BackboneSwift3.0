@@ -16,7 +16,7 @@ s.homepage  = 'https://github.com/supersabbath/BackboneSwift3.0'
 s.source = {
 	:git => "https://github.com/supersabbath/BackboneSwift3.0.git" , :tag => s.version
 }
-s.source_files = 'BackboneSwift/src/*.{swift}', 'BackboneSwift/src/utils/*.{swift}'
+s.source_files = 'BackboneSwift/src/Model/*.{swift}', 'BackboneSwift/src/Collection/*.{swift}' , 'BackboneSwift/src/Protocols/*.{swift}' , 'BackboneSwift/src/Shared/*.{swift}'
 s.frameworks = 'UIKit'
 s.dependency 'SwiftyJSON'
 s.dependency 'Alamofire'

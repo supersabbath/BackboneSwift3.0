@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.0.1)
+  - BackboneSwift (1.0.0):
+    - Alamofire
+    - PromiseKit/CorePromise
+    - SwiftyJSON
+  - PromiseKit/CorePromise (4.0.4)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - BackboneSwift (from `https://github.com/supersabbath/BackboneSwift3.0.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  BackboneSwift:
+    :branch: master
+    :git: https://github.com/supersabbath/BackboneSwift3.0.git
+
+CHECKOUT OPTIONS:
+  BackboneSwift:
+    :commit: 275d5985c182a74dfe3a8c7608ed34fc864624d5
+    :git: https://github.com/supersabbath/BackboneSwift3.0.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  BackboneSwift: 02a92b636f10165796fc4f7f41b4512b67fb2e18
+  PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+PODFILE CHECKSUM: e66e864ef34c8e4bb07ad106468398b5398f378e
+
+COCOAPODS: 1.0.1
