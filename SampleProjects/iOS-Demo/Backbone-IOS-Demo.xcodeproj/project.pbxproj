@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FFA46B0175294A98582AFF7 /* Pods_Backbone_IOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E54F18B04D774932B0E5E2EA /* Pods_Backbone_IOS_Demo.framework */; };
+		A09F51A90EB07E96E0ABFAE5 /* Pods_Backbone_IOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437588585B6D67F76CCCF85 /* Pods_Backbone_IOS_Demo.framework */; };
 		E15A385D1DD0CA2100EE496B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A385C1DD0CA2100EE496B /* AppDelegate.swift */; };
 		E15A385F1DD0CA2100EE496B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A385E1DD0CA2100EE496B /* ViewController.swift */; };
 		E15A38621DD0CA2100EE496B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E15A38601DD0CA2100EE496B /* Main.storyboard */; };
@@ -17,8 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		467C25A357835B615E21C73A /* Pods-Backbone-IOS-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backbone-IOS-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Backbone-IOS-Demo/Pods-Backbone-IOS-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		AFC150721CC94DFF9C675563 /* Pods-Backbone-IOS-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backbone-IOS-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Backbone-IOS-Demo/Pods-Backbone-IOS-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		0F80E45123CB8B7D0D46634F /* Pods-Backbone-IOS-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backbone-IOS-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Backbone-IOS-Demo/Pods-Backbone-IOS-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		9437588585B6D67F76CCCF85 /* Pods_Backbone_IOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Backbone_IOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9579D97D24E34A2434437DE /* Pods-Backbone-IOS-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Backbone-IOS-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Backbone-IOS-Demo/Pods-Backbone-IOS-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		E15A38591DD0CA2100EE496B /* Backbone-IOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Backbone-IOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15A385C1DD0CA2100EE496B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E15A385E1DD0CA2100EE496B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		E15A38661DD0CA2100EE496B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E15A38681DD0CA2100EE496B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E15A386E1DD0CA4200EE496B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		E54F18B04D774932B0E5E2EA /* Pods_Backbone_IOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Backbone_IOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,26 +35,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFA46B0175294A98582AFF7 /* Pods_Backbone_IOS_Demo.framework in Frameworks */,
+				A09F51A90EB07E96E0ABFAE5 /* Pods_Backbone_IOS_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		404F30A6BA533F483D26F2F9 /* Frameworks */ = {
+		5D4B5F5198E320844D485067 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E54F18B04D774932B0E5E2EA /* Pods_Backbone_IOS_Demo.framework */,
+				9437588585B6D67F76CCCF85 /* Pods_Backbone_IOS_Demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C1C1754C4011CC373BB9020E /* Pods */ = {
+		653B678AB2FD10CABF6FA317 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				467C25A357835B615E21C73A /* Pods-Backbone-IOS-Demo.debug.xcconfig */,
-				AFC150721CC94DFF9C675563 /* Pods-Backbone-IOS-Demo.release.xcconfig */,
+				C9579D97D24E34A2434437DE /* Pods-Backbone-IOS-Demo.debug.xcconfig */,
+				0F80E45123CB8B7D0D46634F /* Pods-Backbone-IOS-Demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -65,8 +65,8 @@
 				E15A386E1DD0CA4200EE496B /* Podfile */,
 				E15A385B1DD0CA2100EE496B /* Backbone-IOS-Demo */,
 				E15A385A1DD0CA2100EE496B /* Products */,
-				C1C1754C4011CC373BB9020E /* Pods */,
-				404F30A6BA533F483D26F2F9 /* Frameworks */,
+				653B678AB2FD10CABF6FA317 /* Pods */,
+				5D4B5F5198E320844D485067 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,12 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E15A386B1DD0CA2100EE496B /* Build configuration list for PBXNativeTarget "Backbone-IOS-Demo" */;
 			buildPhases = (
-				64BEFA8B7858012603FFA818 /* [CP] Check Pods Manifest.lock */,
+				A3D9BFBE6C5772B5715D3BCC /* [CP] Check Pods Manifest.lock */,
 				E15A38551DD0CA2100EE496B /* Sources */,
 				E15A38561DD0CA2100EE496B /* Frameworks */,
 				E15A38571DD0CA2100EE496B /* Resources */,
-				7DDEAD109DE3CFA201C7649A /* [CP] Embed Pods Frameworks */,
-				C25EADFB830DDE668E66657E /* [CP] Copy Pods Resources */,
+				AD70386FE53F68A0EFC79D32 /* [CP] Embed Pods Frameworks */,
+				BD7AF270A2942B9D8F803FA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,7 +164,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		64BEFA8B7858012603FFA818 /* [CP] Check Pods Manifest.lock */ = {
+		A3D9BFBE6C5772B5715D3BCC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,7 +179,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7DDEAD109DE3CFA201C7649A /* [CP] Embed Pods Frameworks */ = {
+		AD70386FE53F68A0EFC79D32 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -194,7 +194,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Backbone-IOS-Demo/Pods-Backbone-IOS-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C25EADFB830DDE668E66657E /* [CP] Copy Pods Resources */ = {
+		BD7AF270A2942B9D8F803FA4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,7 +338,7 @@
 		};
 		E15A386C1DD0CA2100EE496B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 467C25A357835B615E21C73A /* Pods-Backbone-IOS-Demo.debug.xcconfig */;
+			baseConfigurationReference = C9579D97D24E34A2434437DE /* Pods-Backbone-IOS-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
@@ -352,7 +352,7 @@
 		};
 		E15A386D1DD0CA2100EE496B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFC150721CC94DFF9C675563 /* Pods-Backbone-IOS-Demo.release.xcconfig */;
+			baseConfigurationReference = 0F80E45123CB8B7D0D46634F /* Pods-Backbone-IOS-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;

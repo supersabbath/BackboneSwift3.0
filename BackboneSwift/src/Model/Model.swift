@@ -39,7 +39,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     }
     // Mark: 100% Backbone funcs
 
-    public func parse(_ response: JSON) {
+   open func parse(_ response: JSON) {
         reflexion(json:response, mirror: mirror)
         reflectSuperChildren(response, superMirror: mirror.superclassMirror)
     }

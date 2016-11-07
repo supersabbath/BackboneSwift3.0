@@ -86,10 +86,6 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
     }
 
    // MARK: Collections Cache
-    // 
+        // See:  ConnectivityProtocol and Fetchable implementations
     
 }
-
-
-
-//
