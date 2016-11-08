@@ -126,7 +126,6 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
                         elementsArray.append(model)
                 }
             }
-         
         }
         return elementsArray
     

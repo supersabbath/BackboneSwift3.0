@@ -306,7 +306,8 @@ class ModelTests: XCTestCase {
         let mpxItem = MPXMediaItem()
         mpxItem.url = "http://feed.entertainment.tv.theplatform.eu/f/qaJAph/peg_mena_layout?byScheme=urn:peg:layoutBigMainPage"
         mpxItem.fetch().then { (response) -> Void in
-            
+            XCTAssertEqual(mpxItem.startIndex, "1")
+            XCTAssertEqual(mpxItem.title, "Mena PEG Layout Feed")
             XCTAssertTrue((mpxItem.entries?.count)! > 0)
             let fistEntry = mpxItem.entries!.first
             XCTAssertTrue(fistEntry?.peg$layoutOrder == "0")

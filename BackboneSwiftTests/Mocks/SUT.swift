@@ -38,8 +38,8 @@ open class VideoCollectionSUT : Model {
 
 open class MPXMediaItem : Model {
     
-//    var startIndex:String = ""
-//    var title:String = ""
+    var startIndex:String = ""
+    var title:String = ""
     var entries:[MPXEntry]?
 }
 
@@ -47,12 +47,6 @@ open class MPXEntry: Model  {
     var peg$layoutOrder:String?
     var peg$pEGGenreType:String?
     var peg$pEGImageType:String?
-    
-    public func  copy(with zone: NSZone? = nil) -> Any {
-        // This is the reason why `init(_ model: GameModel)`
-        // must be required, because `GameModel` is not `final`.
-        return type(of: self).init()
-    }
 }
 
 open class JayCDumpClass : Model {
