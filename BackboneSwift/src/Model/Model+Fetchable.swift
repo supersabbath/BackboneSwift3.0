@@ -13,6 +13,13 @@ import SwiftyJSON
 
 extension Fetchable where Self : Model {
     
+    public func fetcha(usingOptions options: HttpOptions? = nil) -> Promise<Self> {
+        return Promise.init(resolvers: { (ok, nook) in
+            let m = Model()
+            ok(self)
+        })
+    }
+    
     public func fetch(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         return Promise(resolvers: { (fulfill, reject) in
             fetch(usingOptions:options, onSuccess: { (response) in

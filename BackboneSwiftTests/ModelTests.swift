@@ -294,9 +294,43 @@ class ModelTests: XCTestCase {
             XCTFail()
         }
         
-        self.waitForExpectations(timeout: 100, handler:{ (error) in
+        self.waitForExpectations(timeout: 10, handler:{ (error) in
             print("test time out")
         });
     }
     
+    func testParseWithModelsInsideACollection() {
+        
+        let asyncExpectation = expectation(description: "testParseWithModelsInsideACollection")
+        
+        let mpxItem = MPXMediaItem()
+        mpxItem.url = "http://feed.entertainment.tv.theplatform.eu/f/qaJAph/peg_mena_layout?byScheme=urn:peg:layoutBigMainPage"
+        mpxItem.fetch().then { (response) -> Void in
+            
+            XCTAssertTrue((mpxItem.entries?.count)! > 0)
+            let fistEntry = mpxItem.entries!.first
+            XCTAssertTrue(fistEntry?.peg$layoutOrder == "0")
+            XCTAssertTrue((fistEntry?.peg$pEGImageType!.characters.count)! > 3)
+             asyncExpectation.fulfill()
+        }.catch { (error) in
+            XCTFail()
+        }
+        
+        self.waitForExpectations(timeout: 100, handler:{ (error) in
+            print("testParseWithModelsInsideACollection time out")
+        });
+    }
+    
+    func testClassParsing() {
+        
+        let sut = MPXMediaItem()
+        
+        for case let (varName , value ) in sut.mirror.children {
+            
+            if varName == "entries"{
+                let className =  sut.className(for: value)
+                XCTAssertEqual("MPXEntry", className)
+            }
+        }
+    }
 }

@@ -14,6 +14,7 @@ import PromiseKit
 class ViewController: UIViewController {
     
     let video = Video()
+    let videos = VideoCollection(baseUrl: "http://www.rtve.es/api/videos.json")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,15 @@ class ViewController: UIViewController {
             print("Video pubState: \(self.video.pubState?.code)")
         }.catch { (error) in
                 print(error)
+        }
+        
+        let opts = HttpOptions(queryString: "size=10")
+        videos.url =  "http://www.rtve.es/api/videos.json"
+        videos.fetch(usingOptions: opts).then { (respose) -> Void in
+            
+            print(self.videos.debugDescription)
+        }.catch { (error) in
+             print(error)
         }
     }
 
