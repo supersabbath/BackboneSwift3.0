@@ -33,6 +33,20 @@ open class VideoCollectionSUT : Model {
  SUTs:  USED in MODEL test TestClass and VideoSUT
  
  */
+
+open class MPXMediaItem : Model {
+    
+    var startIndex:String = ""
+    var title:String = ""
+    var entries:[MPXEntry]?
+}
+
+open class MPXEntry: Model  {
+    var peg$layoutOrder:String?
+    var peg$pEGGenreType:String?
+    var peg$pEGImageType:String?
+}
+
 open class JayCDumpClass : Model {
     var dummyString:String?
     var dummyJuanCarlos:String?
@@ -80,6 +94,7 @@ extension Fetchable where Self: VideoSUT {
     }
 }
 
+
 open class DummyClassWithSubclass : Model {
     var name:String?
     var intValue:String?
@@ -87,6 +102,7 @@ open class DummyClassWithSubclass : Model {
     var array:[AnyObject]?
     var backboneModel : JayCDumpClass?
 }
+
 
 open class TwoLevelsOfSubclass : DummyClassWithSubclass {
     var customValue:String?

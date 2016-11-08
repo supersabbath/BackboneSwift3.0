@@ -12,15 +12,27 @@ import SwiftyJSON
 import PromiseKit
 
 class ViewController: UIViewController {
+    
     let video = Video()
+    let videos = VideoCollection(baseUrl: "http://www.rtve.es/api/videos.json")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         video.url =  "http://www.rtve.es/api/videos.json?size=1"
         video.fetch().then { (respose) -> Void in
-                print(respose.result)
+            print("Video uri: \(self.video.uri)")
+            print("Video pubState: \(self.video.pubState?.code)")
         }.catch { (error) in
+                print(error)
+        }
+        
+        let opts = HttpOptions(queryString: "size=10")
+        videos.url =  "http://www.rtve.es/api/videos.json"
+        videos.fetch(usingOptions: opts).then { (respose) -> Void in
             
+            print(self.videos.debugDescription)
+        }.catch { (error) in
+             print(error)
         }
     }
 
@@ -32,11 +44,16 @@ class ViewController: UIViewController {
 
 }
 
+class PubState:Model {
+    var code:String?
+}
+
 
 class Video: Model {
     
     var uri:String?
     var language:String?
+    var pubState:PubState?
     
      override func parse(_ response: JSON) {
         if let videdDic = response["page"]["items"].arrayValue.first {

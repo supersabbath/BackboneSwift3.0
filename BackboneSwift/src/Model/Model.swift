@@ -71,21 +71,25 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
         for case let (varName? , value ) in mirror.children {
 
             if responds(to:Selector(varName)) {
-                
-                if let className = self.className(for: value) ,  !isSwiftBasicType(className: className) {
-                    let model = self.objectForType(className:className)
-                    if let m = model as? Model {
-                        m.parse( json[varName])
-                        self[varName] = model as AnyObject?
-                    }
-                    continue
-                }
-                
+
                 switch json[varName].type {
                 case .array:
-                    setValue(json[varName].arrayObject , forKey: varName)
+                  
+                    let models  = parseCollectionElement(usingJSON: json[varName].arrayValue, propertyName: varName, andValue: value)
+                    switch models.count {
+                        case 0:
+                            setValue(json[varName].arrayObject , forKey: varName)
+                        default:
+                            setValue(models,forKey: varName)
+                    }
+     
                 case .dictionary:
-                    setValue(json[varName].dictionaryObject, forKey: varName)
+                    
+                    if let modelInstance = makeModel(forProperty: varName, withValue: value, andJSON: json) {
+                        self[varName] = modelInstance as AnyObject?
+                    } else{
+                        setValue(json[varName].dictionaryObject, forKey: varName)
+                    }
                 case .string:
                     setValue(json[varName].stringValue, forKey: varName)
                 case .number:
@@ -99,17 +103,47 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
         }
     }
     
+    internal func makeModel(forProperty propertyName:String ,withValue value:Any , andJSON json:JSON) -> AnyObject? {
+        
+            if let className = className(for: value) ,  !isSwiftBasicType(className: className) {
+                let model = self.objectForType(className:className)
+                if let m = model as? Model {
+                    m.parse( json[propertyName])
+                   return m
+                }
+            }
+        return nil
+    }
+    
+    internal func parseCollectionElement(usingJSON  json:[JSON], propertyName varName:String , andValue value:Any ) -> [AnyObject] {
+        
+        var elementsArray: [AnyObject] = []
+        json.forEach { (jsonItem) in
+            
+            if let classDescriptor = className(for: value) {
+                if let model = self.objectForType(className:classDescriptor)  {
+                        (model as! Model).parse(jsonItem)
+                        elementsArray.append(model)
+                }
+            }
+        }
+        return elementsArray
+    
+    }
+    
     // MARK: -- Helpers
     private var basicTypes = ["string" , "array" ,"dictionary" , "int" , "bool"]
     internal func className(for value: Any) -> String? {
         
         let subMirror = Mirror(reflecting: value)
-        var className = String(describing:subMirror.subjectType)
-        guard  let leftArrow = className.range(of: ">") , let optionalLiteral = className.range(of: "Optional<") else { return nil }
-        className.removeSubrange(leftArrow)
-        className.removeSubrange(optionalLiteral)
+        let className = String(describing:subMirror.subjectType)
+        let match = className.matchingStrings(regex: "[A-Za-z]*>").first?.first
+    
+        guard var matchedString = match ,  let greaterThanRange = matchedString.range(of: ">") else { return nil }
+        matchedString.removeSubrange(greaterThanRange)
         
-        return className
+        
+        return matchedString
     }
     
     
@@ -121,15 +155,37 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     
     internal func objectForType(className: String) -> AnyObject? {
         
-        if let modelSubClass =  NSClassFromString("BackboneSwift."+className) as? NSObject.Type {
-            let modelClass = type(of: Model())
-            if modelSubClass.isSubclass(of:modelClass) {
-                return modelSubClass.init()
+        var module:String
+        #if BB_TEST_TARGET // Will be only be execute on Backbone's Test Target
+            if Bundle.allBundles.count > 1 {
+                module = "BackboneSwiftTests"
+            } else {
+                guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
+                module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
+            }
+            
+        #else
+            guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
+            module = (bundleIdentifier as NSString).pathExtension
+        #endif
+            func makeInstance(_ module :String , _ className:String) -> AnyObject? {
+            
+                guard  let modelSubClass =  NSClassFromString("\(module).\(className)") as? NSObject.Type else {
+                    return nil
+                }
+            
+                let modelClass = type(of: Model())
+                if modelSubClass.isSubclass(of:modelClass) {
+                    return modelSubClass.init()
+                } else{
+                    return nil
             }
         }
-        return nil
+        
+        let newInstance = makeInstance(module, className) ?? makeInstance(module.replacingOccurrences(of: "-", with: "_"), className)
+        return newInstance
     }
-   
+    
     // MARK: -- Fetchable Protocol
     // see Model+Fetchable.swift
     
@@ -143,4 +199,18 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
     // MARK: --  POST
     // See Model+Fetchable.swift
    }
+
+extension String {
+    func matchingStrings(regex: String) -> [[String]] {
+        guard let regex = try? NSRegularExpression(pattern: regex, options: []) else { return [] }
+        let nsString = self as NSString
+        let results  = regex.matches(in: self, options: [], range: NSMakeRange(0, nsString.length))
+        return results.map { result in
+            (0..<result.numberOfRanges).map { result.rangeAt($0).location != NSNotFound
+                ? nsString.substring(with: result.rangeAt($0))
+                : ""
+            }
+        }
+    }
+}
 
