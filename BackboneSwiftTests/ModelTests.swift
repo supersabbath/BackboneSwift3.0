@@ -288,7 +288,7 @@ class ModelTests: XCTestCase {
             
             XCTAssertTrue(reponseTuple.metadata.isCacheResult)
             let language = (reponseTuple.result as! VideoSUT).language
-            XCTAssertEqual(language, "es")
+            XCTAssertEqual(language?.characters.count, 2)
             asyncExpectation.fulfill()
         }.catch { (error) in
             XCTFail()
