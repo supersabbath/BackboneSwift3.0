@@ -12,6 +12,7 @@ import PromiseKit
 import SwiftyJSON
 
 extension BaseCollection : Fetchable {
+
  
     /**
      Fetch the default set of models for this collection from the server, setting them on the collection when they arrive. The options hash takes success and error callbacks which will both be passed (collection, response, options) as arguments. When the model data returns from the server, it uses set to (intelligently) merge the fetched models, unless you pass {reset: true}, in which case the collection will be (efficiently) reset. Delegates to Backbone.sync under the covers for custom persistence strategies and returns a jqXHR. The server handler for fetch requests should return a JSON array of models.
@@ -37,11 +38,22 @@ extension BaseCollection : Fetchable {
             }
         }
     }
+    
+    public func fetch<Self>(usingOptions options: HttpOptions? = nil) -> Promise<(result:Self,metadata: ResponseMetadata)> {
+        return Promise<(result:Self,metadata: ResponseMetadata)>(resolvers: { (fulfill, reject) in
+            fetch(usingOptions:options, onSuccess: { (response) in
+                fulfill((result: response.result as! Self, metadata: response.metadata))
+            }, onError: { (error) in
+                reject(error)
+            })
+        })
+    }
+    
     /**
      Promisify Fetch the default set of models for this collection from the server, setting them on the collection when they arrive. The options hash takes success and error callbacks which will both be passed (collection, response, options) as arguments. When the model data returns from the server, it uses set to (intelligently) merge the fetched models, unless you pass {reset: true}, in which case the collection will be (efficiently) reset. Delegates to Backbone.sync under the covers for custom persistence strategies and returns a jqXHR. The server handler for fetch requests should return a JSON array of models.
      */
-    @discardableResult
-    public func fetch(usingOptions options:HttpOptions?=nil) -> Promise <ResponseTuple>  {
+  //  @discardableResult
+  /*  public func fetch(usingOptions options:HttpOptions?=nil) -> Promise <ResponseTuple>  {
         
         return Promise { fulfill, reject in
             fetch(usingOptions: options, onSuccess: { (response) -> Void in
@@ -50,5 +62,5 @@ extension BaseCollection : Fetchable {
                     reject(error)
             })
         }
-    }
+    }*/
 }

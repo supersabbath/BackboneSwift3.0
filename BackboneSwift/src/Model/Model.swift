@@ -13,6 +13,8 @@ import Alamofire
 
 
 open class Model: NSObject , ModelProtocol , JsonRepresentable {
+
+
     /**
      cacheDelegate provides a Cache implementation for the requests
      */

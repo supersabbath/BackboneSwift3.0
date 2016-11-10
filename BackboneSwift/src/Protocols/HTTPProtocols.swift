@@ -27,8 +27,9 @@ public protocol Fetchable : ConnectivityProtocol {
      - Return: Promise
      - See: ResponseTuple
      */
-    func fetch(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
-    
+    //func fetch(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func fetch<T:BaseObjectProtocol>(usingOptions options: HttpOptions?) -> Promise<(result:T, metadata: ResponseMetadata)>
+
     /**
      Fetch performs and HTTP GET
      
