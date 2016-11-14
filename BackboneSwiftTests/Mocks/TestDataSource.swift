@@ -29,7 +29,7 @@ struct TestDataSource {
         guard let path = jsonPath , let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
             return nil
         }
-        let jsonObject = JSONOperations.JSONFromBytes(data)
+        let jsonObject = JSONOperations.JSONFromBytes(data) as Any
         return JSON(jsonObject)
     }
 }

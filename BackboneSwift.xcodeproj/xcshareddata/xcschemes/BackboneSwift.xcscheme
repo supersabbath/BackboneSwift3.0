@@ -20,6 +20,20 @@
                ReferencedContainer = "container:BackboneSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E116DD3A1DBE582B00BA812E"
+               BuildableName = "BackboneSwiftTests.xctest"
+               BlueprintName = "BackboneSwiftTests"
+               ReferencedContainer = "container:BackboneSwift.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

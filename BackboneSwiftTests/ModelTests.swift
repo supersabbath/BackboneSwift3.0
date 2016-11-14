@@ -115,7 +115,7 @@ class ModelTests: XCTestCase {
         sut.url = url
         let asyncExpectation = expectation(description: "withJSONIfResponseReturnsJSON")
     
-        sut.fetch().then { (response) -> Void in
+        sut.fetch().then { (model:JayCDumpClass, metadata) -> Void in
            XCTFail()
         }.catch { (error) in
             switch error as! BackboneError {
@@ -211,9 +211,9 @@ class ModelTests: XCTestCase {
         //given
         sut.url = "http://httpbin.org/delete"
         //when
-        sut.delete().then { (result) -> Void in
+        sut.delete().then { (model:JayCDumpClass , metadata) -> Void in
             //then
-            XCTAssertTrue(result.metadata.httpStatus == 200)
+            XCTAssertTrue(metadata.httpStatus == 200)
             asyncExpectation.fulfill()
         }.catch { (err) in
                 XCTFail()
@@ -232,12 +232,13 @@ class ModelTests: XCTestCase {
         sut.dummyJuanCarlos = "jayC"
         sut.dummyBoolean = true
         //when
-        sut.save().then { (result) -> Void in
+        sut.save().then { (model:JayCDumpClass ,  metadata) -> Void in
             //then
-            XCTAssertTrue(result.metadata.httpStatus == 200)
-           
+            XCTAssertTrue(metadata.httpStatus == 200)
             asyncExpectation.fulfill()
+            
             }.catch { (err) in
+             
                 XCTFail()
                 asyncExpectation.fulfill()
         }
@@ -254,13 +255,11 @@ class ModelTests: XCTestCase {
         sut.dummyJuanCarlos = "jayC"
         sut.dummyBoolean = true
         //when
-        sut.create().then { (resultTuple) -> Void in
-            //then
-            XCTAssertTrue(resultTuple.metadata.httpStatus == 200)
+        sut.create().then { (model:JayCDumpClass, metadata) -> Void in
+            XCTAssertTrue(metadata.httpStatus == 200)
             asyncExpectation.fulfill()
-            }.catch { (err) in
-                XCTFail()
-                asyncExpectation.fulfill()
+        }.catch { (error) in
+             XCTFail()
         }
         self.waitForExpectations(timeout: 100, handler:{ (error) in
             print("test time out")
@@ -279,9 +278,9 @@ class ModelTests: XCTestCase {
         var opts =  HttpOptions()
         opts.useCache = true
 
-        videoSut.fetch(usingOptions: opts).then { (response) ->  Promise<ResponseTuple>  in
+        videoSut.fetch(usingOptions: opts).then { (model:VideoSUT , metadata) ->  Promise<ResponseTuple>  in
         
-            XCTAssertFalse(response.metadata.isCacheResult)
+            XCTAssertFalse(metadata.isCacheResult)
             return videoSut.fetch(usingOptions: opts)
             
         }.then { (reponseTuple) -> Void in
@@ -305,7 +304,7 @@ class ModelTests: XCTestCase {
         
         let mpxItem = MPXMediaItem()
         mpxItem.url = "http://feed.entertainment.tv.theplatform.eu/f/qaJAph/peg_mena_layout?byScheme=urn:peg:layoutBigMainPage"
-        mpxItem.fetch().then { (response) -> Void in
+        mpxItem.fetch().then { (model:MPXMediaItem , _ ) -> Void in
             XCTAssertEqual(mpxItem.startIndex, "1")
             XCTAssertEqual(mpxItem.title, "Mena PEG Layout Feed")
             XCTAssertTrue((mpxItem.entries?.count)! > 0)
