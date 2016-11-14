@@ -20,7 +20,7 @@ public protocol ModelProtocol : BaseObjectProtocol, Fetchable, Deletable , Savab
 }
 
 
-public protocol  BaseObjectProtocol {
+public protocol  BaseObjectProtocol : class {
     /**
      - *url*  the relative URL where the model's resource would be located on the server. If your models are located somewhere else, override this method with the correct logic. Generates URLs of the form: "[collection.url]/[id]" by default, but you may override by specifying an explicit urlRoot if the model's collection shouldn't be taken into account.
      */

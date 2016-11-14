@@ -12,19 +12,23 @@ import PromiseKit
 import SwiftyJSON
 
 extension Fetchable where Self : Model {
+<<<<<<< HEAD
 
     
     public func fetch(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
         return Promise(resolvers: { (fulfill, reject) in
+=======
+    
+    public func fetch<Self>(usingOptions options: HttpOptions? = nil) -> Promise<(result:Self,metadata: ResponseMetadata)> {
+        return Promise<(result:Self,metadata: ResponseMetadata)>(resolvers: { (fulfill, reject) in
+>>>>>>> 13a663c632b50b49ab6523d14fccaa8086e313f0
             fetch(usingOptions:options, onSuccess: { (response) in
-                fulfill(response)
-                }, onError: { (error) in
-                    reject(error)
+                fulfill((result: response.result as! Self, metadata: response.metadata))
+            }, onError: { (error) in
+                reject(error)
             })
         })
     }
-    
-    
     
     public func fetch(usingOptions options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple) ->Void , onError:@escaping (BackboneError)->Void){
         

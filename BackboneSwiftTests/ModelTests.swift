@@ -316,7 +316,6 @@ class ModelTests: XCTestCase {
         }.catch { (error) in
             XCTFail()
         }
-        
         self.waitForExpectations(timeout: 100, handler:{ (error) in
             print("testParseWithModelsInsideACollection time out")
         });
@@ -327,7 +326,6 @@ class ModelTests: XCTestCase {
         let sut = MPXMediaItem()
         
         for case let (varName , value ) in sut.mirror.children {
-            
             if varName == "entries"{
                 let className =  sut.className(for: value)
                 XCTAssertEqual("MPXEntry", className)
