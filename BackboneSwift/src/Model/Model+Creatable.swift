@@ -26,14 +26,16 @@ extension Creatable where Self:Model {
             onError(.invalidURL)
             return
         }
+        
         var postOptions = options
         if options != nil {
             postOptions?.body = jsonDict()
         }else {
             postOptions = HttpOptions(postBody:jsonDict())
         }
-        processOptions(feedURL, inOptions: postOptions  , complete: { (options, url) in
-            self.synch(self , modelURL: url, method: .post, options: options,onSuccess: onSuccess, onError: onError)
+        processOptions(feedURL, inOptions: postOptions  , complete: { [weak self] (options, url) in
+            guard self != nil else { onError(BackboneError.cancelledRequest);  return }
+            self!.synch(self! , modelURL: url, method: .post, options: options,onSuccess: onSuccess, onError: onError)
         })
     }
 

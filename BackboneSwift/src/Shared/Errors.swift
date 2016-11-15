@@ -25,4 +25,5 @@ public enum BackboneError: Error {
     case parsingError
     case invalidHTTPMethod
     case failedPOST
+    case cancelledRequest
 }
