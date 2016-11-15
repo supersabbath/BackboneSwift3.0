@@ -27,8 +27,9 @@ public protocol Fetchable : ConnectivityProtocol {
      - Return: Promise
      - See: ResponseTuple
      */
-    func fetch(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
-    
+    //func fetch(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func fetch<T:BaseObjectProtocol>(usingOptions options: HttpOptions?) -> Promise<(result:T, metadata: ResponseMetadata)>
+
     /**
      Fetch performs and HTTP GET
      
@@ -67,7 +68,7 @@ extension Fetchable {
         
         guard let delegate = delegate , cacheID != nil else { return nil }
         let cachedResponse = delegate.requestCache.object(forKey: cacheID! as NSString)
-        let jsonObject = JSON(cachedResponse)
+        let jsonObject = JSON(cachedResponse as Any)
         return jsonObject
     }
 }
@@ -75,7 +76,7 @@ extension Fetchable {
 public protocol Deletable : ConnectivityProtocol  {
     // Performs the DELETE http methdo
     @discardableResult
-    func delete(usingOptions options:HttpOptions?) -> Promise < ResponseTuple >
+    func delete<T:BaseObjectProtocol>(usingOptions options:HttpOptions?) -> Promise < (result:T, metadata: ResponseMetadata) >
     func delete(usingOptions options:HttpOptions? , onSuccess:@escaping (ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
     
 }
@@ -86,7 +87,7 @@ public protocol Savable : ConnectivityProtocol {
         Save () a model to your server
      
      */
-    func save(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func save<T:BaseObjectProtocol>(usingOptions options:HttpOptions?) -> Promise <(result:T, metadata: ResponseMetadata)>
     func save(usingOptions options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void);
     
 }
@@ -94,7 +95,7 @@ public protocol Savable : ConnectivityProtocol {
 
 public protocol Creatable : ConnectivityProtocol{
     
-    func create(usingOptions options:HttpOptions?) -> Promise <ResponseTuple>
+    func create<T:BaseObjectProtocol>(usingOptions options:HttpOptions?) -> Promise <(result:T, metadata: ResponseMetadata)>
     func create(usingOptions options:HttpOptions? , onSuccess: @escaping(ResponseTuple) ->Void , onError:@escaping(BackboneError)->Void)
     
 }

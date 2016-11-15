@@ -13,11 +13,11 @@ import PromiseKit
 
 extension Deletable where Self : Model {
 
-    public func delete(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+    public func delete<Self>(usingOptions options: HttpOptions? = nil) -> Promise<(result:Self, metadata: ResponseMetadata)> {
         return Promise { (fulfill, reject) in
-            delete(usingOptions: options, onSuccess: { (result) -> Void in
-                fulfill(result)
-                }, onError: { (error) in
+            delete(usingOptions: options, onSuccess: { (response) -> Void in
+                    fulfill((result: response.result as! Self, metadata: response.metadata))
+            }, onError: { (error) in
                     reject(error)
             })
         }

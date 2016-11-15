@@ -4,7 +4,7 @@ use_frameworks!
 
 def libraries
     
-    pod 'Alamofire'
+    pod 'Alamofire', '~> 4.0'
     pod 'PromiseKit/CorePromise'
     pod 'SwiftyJSON'
     

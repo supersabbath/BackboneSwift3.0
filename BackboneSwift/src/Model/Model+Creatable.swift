@@ -9,13 +9,13 @@ import Alamofire
 import PromiseKit
 
 extension Creatable where Self:Model {
-
-    public func create(usingOptions options:HttpOptions? = nil) -> Promise <ResponseTuple> {
+    
+    public func create<Self>(usingOptions options:HttpOptions? = nil ) -> Promise <(result:Self, metadata: ResponseMetadata)> {
         return Promise {  fulfill, reject in
-            create(usingOptions: options, onSuccess: { (result) -> Void in
-                fulfill(result)
-                }, onError: { (error) -> Void in
-                    reject (error )
+            create(usingOptions: options, onSuccess: { (response) -> Void in
+                    fulfill((result: response.result as! Self, metadata: response.metadata))
+            }, onError: { (error) -> Void in
+                    reject (error)
             })
         }
     }

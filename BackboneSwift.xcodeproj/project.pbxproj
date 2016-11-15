@@ -7,36 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5443C3011DD1D43600C016A9 /* BackboneSwiftTests_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443C3001DD1D43600C016A9 /* BackboneSwiftTests_tvOS.swift */; };
-		5443C3031DD1D43600C016A9 /* BackboneSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545B96921DD1C15400A63856 /* BackboneSwift.framework */; };
-		5443C3091DD1D44200C016A9 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902261DBF5C11009C64FD /* ModelTests.swift */; };
-		5443C30A1DD1D44500C016A9 /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */; };
-		5443C30B1DD1D44A00C016A9 /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = E1700CF81DC38C6B00C9A73B /* videos.json */; };
-		5443C30C1DD1D44D00C016A9 /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622501DC0DABF00613DAD /* TestDataSource.swift */; };
-		5443C30D1DD1D45100C016A9 /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
-		5443C30E1DD1D45300C016A9 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A384D1DD0C0D700EE496B /* Mocks.swift */; };
-		545B969A1DD1C17900A63856 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F411DC3447B0035D89D /* Model.swift */; };
-		545B969B1DD1C17E00A63856 /* Model+Deletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A38971DD0CEA600EE496B /* Model+Deletable.swift */; };
-		545B969C1DD1C17E00A63856 /* Model+JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */; };
-		545B969D1DD1C17E00A63856 /* Model+Savable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108F4081DCCF29200C956CE /* Model+Savable.swift */; };
-		545B969E1DD1C17E00A63856 /* Model+Creatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622531DC2143A00613DAD /* Model+Creatable.swift */; };
-		545B969F1DD1C17E00A63856 /* Model+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */; };
-		545B96A01DD1C18500A63856 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F431DC345540035D89D /* Errors.swift */; };
-		545B96A11DD1C18500A63856 /* HttpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F441DC345540035D89D /* HttpOptions.swift */; };
-		545B96A21DD1C18500A63856 /* JSONOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F451DC345540035D89D /* JSONOperations.swift */; };
-		545B96A31DD1C18500A63856 /* responseSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F461DC345540035D89D /* responseSwiftyJSON.swift */; };
-		545B96A41DD1C18500A63856 /* ResponseMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F5B1DC349000035D89D /* ResponseMetadata.swift */; };
-		545B96A51DD1C18900A63856 /* BaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF61DC3611700C9A73B /* BaseCollection.swift */; };
-		545B96A61DD1C18E00A63856 /* Collection+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */; };
-		545B96A71DD1C19300A63856 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4F1DC3459C0035D89D /* ModelProtocol.swift */; };
-		545B96A81DD1C19300A63856 /* ConectivityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4B1DC345640035D89D /* ConectivityProtocol.swift */; };
-		545B96A91DD1C19300A63856 /* HTTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4C1DC345640035D89D /* HTTPProtocols.swift */; };
-		545B96AA1DD1C19300A63856 /* BackboneDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F581DC346EF0035D89D /* BackboneDelegates.swift */; };
-		545B96AB1DD1C19D00A63856 /* BackboneSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E116DD351DBE582B00BA812E /* BackboneSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		545B96AC1DD1C1C600A63856 /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
-		7B77A9813DFAEED84BA99413 /* Pods_BackboneSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221476D5C27156BBDF216959 /* Pods_BackboneSwift.framework */; };
-		85EB417A31471183F407C75C /* Pods_BackboneSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F67E2572EB695957F793B57 /* Pods_BackboneSwiftTests.framework */; };
-		C55C4A2E0B0B9829D87B1DAB /* Pods_BackboneSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09775A0C7B8768F1820E485 /* Pods_BackboneSwift_tvOS.framework */; };
+		544003481DDA2582006CDD7E /* SUT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902281DBF5D9F009C64FD /* SUT.swift */; };
+		544003491DDA2585006CDD7E /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A384D1DD0C0D700EE496B /* Mocks.swift */; };
+		5440034A1DDA2589006CDD7E /* videos.json in Resources */ = {isa = PBXBuildFile; fileRef = E1700CF81DC38C6B00C9A73B /* videos.json */; };
+		5440034B1DDA258C006CDD7E /* TestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622501DC0DABF00613DAD /* TestDataSource.swift */; };
+		5440034C1DDA2590006CDD7E /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11902261DBF5C11009C64FD /* ModelTests.swift */; };
+		5440034D1DDA2593006CDD7E /* CollectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */; };
+		5440034E1DDA25AD006CDD7E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F411DC3447B0035D89D /* Model.swift */; };
+		5440034F1DDA25B2006CDD7E /* Model+Deletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15A38971DD0CEA600EE496B /* Model+Deletable.swift */; };
+		544003501DDA25B4006CDD7E /* Model+JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F541DC346260035D89D /* Model+JSONRepresentable.swift */; };
+		544003511DDA25B8006CDD7E /* Model+Savable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108F4081DCCF29200C956CE /* Model+Savable.swift */; };
+		544003521DDA25B8006CDD7E /* Model+Creatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12622531DC2143A00613DAD /* Model+Creatable.swift */; };
+		544003531DDA25B8006CDD7E /* Model+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */; };
+		544003541DDA25BF006CDD7E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F431DC345540035D89D /* Errors.swift */; };
+		544003551DDA25BF006CDD7E /* HttpOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F441DC345540035D89D /* HttpOptions.swift */; };
+		544003561DDA25BF006CDD7E /* JSONOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F451DC345540035D89D /* JSONOperations.swift */; };
+		544003571DDA25BF006CDD7E /* responseSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F461DC345540035D89D /* responseSwiftyJSON.swift */; };
+		544003581DDA25BF006CDD7E /* ResponseMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F5B1DC349000035D89D /* ResponseMetadata.swift */; };
+		544003591DDA25C3006CDD7E /* BaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CF61DC3611700C9A73B /* BaseCollection.swift */; };
+		5440035A1DDA25C6006CDD7E /* Collection+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1700CEE1DC3573000C9A73B /* Collection+Fetchable.swift */; };
+		5440035B1DDA25CB006CDD7E /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4F1DC3459C0035D89D /* ModelProtocol.swift */; };
+		5440035C1DDA25CB006CDD7E /* ConectivityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4B1DC345640035D89D /* ConectivityProtocol.swift */; };
+		5440035D1DDA25CB006CDD7E /* HTTPProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F4C1DC345640035D89D /* HTTPProtocols.swift */; };
+		5440035E1DDA25CB006CDD7E /* BackboneDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F581DC346EF0035D89D /* BackboneDelegates.swift */; };
+		5440035F1DDA25CF006CDD7E /* BackboneSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E116DD351DBE582B00BA812E /* BackboneSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63772E2C9CFEE3EBCD96EA9E /* Pods_BackboneSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4527E5554A1F0503B24B18 /* Pods_BackboneSwiftTests.framework */; };
+		9280BADB2E4371B094C3210F /* Pods_BackboneSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F299444263E8315E0D1103C /* Pods_BackboneSwift.framework */; };
+		C7EE4221B68272D7DE8FF70E /* Pods_BackboneSwift_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80A0DE085A363AF40925989 /* Pods_BackboneSwift_tvOS.framework */; };
 		E108F4091DCCF29200C956CE /* Model+Savable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108F4081DCCF29200C956CE /* Model+Savable.swift */; };
 		E1126F401DC3439D0035D89D /* Model+Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */; };
 		E1126F421DC3447B0035D89D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1126F411DC3447B0035D89D /* Model.swift */; };
@@ -82,21 +79,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		21201F30743C0F93BCF0AD04 /* Pods-BackboneSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		221476D5C27156BBDF216959 /* Pods_BackboneSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		23196DF1CD01C91CB2E2402B /* Pods-BackboneSwift-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		427A5F62275459E6E4A35F65 /* Pods-BackboneSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5443C2FE1DD1D43600C016A9 /* BackboneSwiftTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BackboneSwiftTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5443C3001DD1D43600C016A9 /* BackboneSwiftTests_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackboneSwiftTests_tvOS.swift; sourceTree = "<group>"; };
-		5443C3021DD1D43600C016A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		545B96921DD1C15400A63856 /* BackboneSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BackboneSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		545B96951DD1C15400A63856 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "BackboneSwift-tvOS/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
-		545B96AD1DD1C71500A63856 /* Pods_BackboneSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_BackboneSwift.framework; path = "Pods/../build/Debug-iphoneos/Pods_BackboneSwift.framework"; sourceTree = "<group>"; };
-		5F67E2572EB695957F793B57 /* Pods_BackboneSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7BEAA1C0D4D863C480CB0B24 /* Pods-BackboneSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.release.xcconfig"; sourceTree = "<group>"; };
-		A8DC6D5E4512ABBDB8F933F0 /* Pods-BackboneSwift-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		D09775A0C7B8768F1820E485 /* Pods_BackboneSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D57F29CBAD5DBE4D183A7F40 /* Pods-BackboneSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		10B77FEAE243902FBEAEDA9D /* Pods-BackboneSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		28E642CC2D53C90AB8233205 /* Pods-BackboneSwift-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2AE58EB0BE5BA35E4E111ECB /* Pods-BackboneSwift-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5501B4A73DFA983CF0453EA0 /* Pods-BackboneSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8DED0E0B7AA414602D69F81F /* Pods-BackboneSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F299444263E8315E0D1103C /* Pods_BackboneSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A830D060FE9CBA0A18C5429D /* Pods-BackboneSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E108F4081DCCF29200C956CE /* Model+Savable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Savable.swift"; path = "src/Model/Model+Savable.swift"; sourceTree = "<group>"; };
 		E1126F3F1DC3439D0035D89D /* Model+Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model+Fetchable.swift"; path = "src/Model/Model+Fetchable.swift"; sourceTree = "<group>"; };
 		E1126F411DC3447B0035D89D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = src/Model/Model.swift; sourceTree = "<group>"; };
@@ -126,6 +115,9 @@
 		E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTest.swift; sourceTree = "<group>"; };
 		E1700CF61DC3611700C9A73B /* BaseCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollection.swift; path = src/Collection/BaseCollection.swift; sourceTree = "<group>"; };
 		E1700CF81DC38C6B00C9A73B /* videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videos.json; sourceTree = "<group>"; };
+		E1FA3FF61DD4D07600385852 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E80A0DE085A363AF40925989 /* Pods_BackboneSwift_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwift_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE4527E5554A1F0503B24B18 /* Pods_BackboneSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5443C3031DD1D43600C016A9 /* BackboneSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C55C4A2E0B0B9829D87B1DAB /* Pods_BackboneSwift_tvOS.framework in Frameworks */,
+				C7EE4221B68272D7DE8FF70E /* Pods_BackboneSwift_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B77A9813DFAEED84BA99413 /* Pods_BackboneSwift.framework in Frameworks */,
+				9280BADB2E4371B094C3210F /* Pods_BackboneSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,44 +149,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E116DD3C1DBE582B00BA812E /* BackboneSwift.framework in Frameworks */,
-				85EB417A31471183F407C75C /* Pods_BackboneSwiftTests.framework in Frameworks */,
+				63772E2C9CFEE3EBCD96EA9E /* Pods_BackboneSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		308BEBD43E82455DA862E4D3 /* Frameworks */ = {
+		88117D45EA11612B9E6D55D5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				545B96AD1DD1C71500A63856 /* Pods_BackboneSwift.framework */,
-				221476D5C27156BBDF216959 /* Pods_BackboneSwift.framework */,
-				5F67E2572EB695957F793B57 /* Pods_BackboneSwiftTests.framework */,
-				D09775A0C7B8768F1820E485 /* Pods_BackboneSwift_tvOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5443C2FF1DD1D43600C016A9 /* BackboneSwiftTests-tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				5443C3001DD1D43600C016A9 /* BackboneSwiftTests_tvOS.swift */,
-				5443C3021DD1D43600C016A9 /* Info.plist */,
-			);
-			path = "BackboneSwiftTests-tvOS";
-			sourceTree = "<group>";
-		};
-		766957272A13D2FD118A87C3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				21201F30743C0F93BCF0AD04 /* Pods-BackboneSwift.debug.xcconfig */,
-				7BEAA1C0D4D863C480CB0B24 /* Pods-BackboneSwift.release.xcconfig */,
-				427A5F62275459E6E4A35F65 /* Pods-BackboneSwiftTests.debug.xcconfig */,
-				D57F29CBAD5DBE4D183A7F40 /* Pods-BackboneSwiftTests.release.xcconfig */,
-				23196DF1CD01C91CB2E2402B /* Pods-BackboneSwift-tvOS.debug.xcconfig */,
-				A8DC6D5E4512ABBDB8F933F0 /* Pods-BackboneSwift-tvOS.release.xcconfig */,
+				A830D060FE9CBA0A18C5429D /* Pods-BackboneSwift.debug.xcconfig */,
+				5501B4A73DFA983CF0453EA0 /* Pods-BackboneSwift.release.xcconfig */,
+				8DED0E0B7AA414602D69F81F /* Pods-BackboneSwiftTests.debug.xcconfig */,
+				10B77FEAE243902FBEAEDA9D /* Pods-BackboneSwiftTests.release.xcconfig */,
+				2AE58EB0BE5BA35E4E111ECB /* Pods-BackboneSwift-tvOS.debug.xcconfig */,
+				28E642CC2D53C90AB8233205 /* Pods-BackboneSwift-tvOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C94F82537EA11A95A91C16F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1FA3FF61DD4D07600385852 /* Foundation.framework */,
+				8F299444263E8315E0D1103C /* Pods_BackboneSwift.framework */,
+				EE4527E5554A1F0503B24B18 /* Pods_BackboneSwiftTests.framework */,
+				E80A0DE085A363AF40925989 /* Pods_BackboneSwift_tvOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E1126F3C1DC342B70035D89D /* Collection */ = {
@@ -260,10 +242,9 @@
 				E15A384F1DD0C90A00EE496B /* BackboneSwift.podspec */,
 				E116DD341DBE582B00BA812E /* BackboneSwift */,
 				E116DD3F1DBE582B00BA812E /* BackboneSwiftTests */,
-				5443C2FF1DD1D43600C016A9 /* BackboneSwiftTests-tvOS */,
 				E116DD331DBE582B00BA812E /* Products */,
-				766957272A13D2FD118A87C3 /* Pods */,
-				308BEBD43E82455DA862E4D3 /* Frameworks */,
+				C94F82537EA11A95A91C16F3 /* Frameworks */,
+				88117D45EA11612B9E6D55D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,8 +253,6 @@
 			children = (
 				E116DD321DBE582B00BA812E /* BackboneSwift.framework */,
 				E116DD3B1DBE582B00BA812E /* BackboneSwiftTests.xctest */,
-				545B96921DD1C15400A63856 /* BackboneSwift.framework */,
-				5443C2FE1DD1D43600C016A9 /* BackboneSwiftTests-tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +265,6 @@
 				E1126F3C1DC342B70035D89D /* Collection */,
 				E12622581DC2301700613DAD /* Protocols */,
 				E116DD361DBE582B00BA812E /* Info-iOS.plist */,
-				545B96951DD1C15400A63856 /* Info-tvOS.plist */,
 				E116DD351DBE582B00BA812E /* BackboneSwift.h */,
 			);
 			path = BackboneSwift;
@@ -334,7 +312,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545B96AB1DD1C19D00A63856 /* BackboneSwift.h in Headers */,
+				5440035F1DDA25CF006CDD7E /* BackboneSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +342,6 @@
 			);
 			name = "BackboneSwiftTests-tvOS";
 			productName = "BackboneSwiftTests-tvOS";
-			productReference = 5443C2FE1DD1D43600C016A9 /* BackboneSwiftTests-tvOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		545B96911DD1C15400A63856 /* BackboneSwift-tvOS */ = {
@@ -376,7 +353,7 @@
 				545B968E1DD1C15400A63856 /* Frameworks */,
 				545B968F1DD1C15400A63856 /* Headers */,
 				545B96901DD1C15400A63856 /* Resources */,
-				B310D93415A0C30BEA0EFDE7 /* [CP] Copy Pods Resources */,
+				D7C4EF3A25C34E6B02B2A143 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,19 +361,18 @@
 			);
 			name = "BackboneSwift-tvOS";
 			productName = "BackboneSwift-tvOS";
-			productReference = 545B96921DD1C15400A63856 /* BackboneSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E116DD311DBE582B00BA812E /* BackboneSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E116DD461DBE582B00BA812E /* Build configuration list for PBXNativeTarget "BackboneSwift" */;
 			buildPhases = (
-				57E260BB8D6832F04D58CFF1 /* [CP] Check Pods Manifest.lock */,
+				E84683D3E2392AA1B41334A3 /* [CP] Check Pods Manifest.lock */,
 				E116DD2D1DBE582B00BA812E /* Sources */,
 				E116DD2E1DBE582B00BA812E /* Frameworks */,
 				E116DD2F1DBE582B00BA812E /* Headers */,
 				E116DD301DBE582B00BA812E /* Resources */,
-				5E128FB164E617A5F2B0AE70 /* [CP] Copy Pods Resources */,
+				0761149420B8E5CFDF818216 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -411,12 +387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E116DD491DBE582B00BA812E /* Build configuration list for PBXNativeTarget "BackboneSwiftTests" */;
 			buildPhases = (
-				1998FE5515641B62238EFD2C /* [CP] Check Pods Manifest.lock */,
+				B6C67AEF866CB0ACB5B6A9A6 /* [CP] Check Pods Manifest.lock */,
 				E116DD371DBE582B00BA812E /* Sources */,
 				E116DD381DBE582B00BA812E /* Frameworks */,
 				E116DD391DBE582B00BA812E /* Resources */,
-				CDCFB3511815FEE1029E5307 /* [CP] Embed Pods Frameworks */,
-				4696CB042DCDED7625F838F1 /* [CP] Copy Pods Resources */,
+				3F588689EB8C34B2D4FF3C78 /* [CP] Embed Pods Frameworks */,
+				5BBABCA15DF6471C8E90A8F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -486,7 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5443C30B1DD1D44A00C016A9 /* videos.json in Resources */,
+				5440034A1DDA2589006CDD7E /* videos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,52 +491,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1998FE5515641B62238EFD2C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4696CB042DCDED7625F838F1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		57E260BB8D6832F04D58CFF1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5E128FB164E617A5F2B0AE70 /* [CP] Copy Pods Resources */ = {
+		0761149420B8E5CFDF818216 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -575,7 +506,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B310D93415A0C30BEA0EFDE7 /* [CP] Copy Pods Resources */ = {
+		3F588689EB8C34B2D4FF3C78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BBABCA15DF6471C8E90A8F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C67AEF866CB0ACB5B6A9A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C4EF3A25C34E6B02B2A143 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -590,19 +566,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CDCFB3511815FEE1029E5307 /* [CP] Embed Pods Frameworks */ = {
+		E84683D3E2392AA1B41334A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F7E93DDAB89221A0E8EDFB0E /* [CP] Check Pods Manifest.lock */ = {
@@ -627,12 +603,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5443C30A1DD1D44500C016A9 /* CollectionTest.swift in Sources */,
-				5443C30D1DD1D45100C016A9 /* SUT.swift in Sources */,
-				5443C3011DD1D43600C016A9 /* BackboneSwiftTests_tvOS.swift in Sources */,
-				5443C30C1DD1D44D00C016A9 /* TestDataSource.swift in Sources */,
-				5443C3091DD1D44200C016A9 /* ModelTests.swift in Sources */,
-				5443C30E1DD1D45300C016A9 /* Mocks.swift in Sources */,
+				544003481DDA2582006CDD7E /* SUT.swift in Sources */,
+				5440034D1DDA2593006CDD7E /* CollectionTest.swift in Sources */,
+				544003491DDA2585006CDD7E /* Mocks.swift in Sources */,
+				5440034B1DDA258C006CDD7E /* TestDataSource.swift in Sources */,
+				5440034C1DDA2590006CDD7E /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,24 +615,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545B96A81DD1C19300A63856 /* ConectivityProtocol.swift in Sources */,
-				545B96A31DD1C18500A63856 /* responseSwiftyJSON.swift in Sources */,
-				545B96A11DD1C18500A63856 /* HttpOptions.swift in Sources */,
-				545B96AA1DD1C19300A63856 /* BackboneDelegates.swift in Sources */,
-				545B96A91DD1C19300A63856 /* HTTPProtocols.swift in Sources */,
-				545B969D1DD1C17E00A63856 /* Model+Savable.swift in Sources */,
-				545B96AC1DD1C1C600A63856 /* SUT.swift in Sources */,
-				545B96A21DD1C18500A63856 /* JSONOperations.swift in Sources */,
-				545B969B1DD1C17E00A63856 /* Model+Deletable.swift in Sources */,
-				545B96A71DD1C19300A63856 /* ModelProtocol.swift in Sources */,
-				545B969C1DD1C17E00A63856 /* Model+JSONRepresentable.swift in Sources */,
-				545B96A51DD1C18900A63856 /* BaseCollection.swift in Sources */,
-				545B96A61DD1C18E00A63856 /* Collection+Fetchable.swift in Sources */,
-				545B969E1DD1C17E00A63856 /* Model+Creatable.swift in Sources */,
-				545B969F1DD1C17E00A63856 /* Model+Fetchable.swift in Sources */,
-				545B969A1DD1C17900A63856 /* Model.swift in Sources */,
-				545B96A01DD1C18500A63856 /* Errors.swift in Sources */,
-				545B96A41DD1C18500A63856 /* ResponseMetadata.swift in Sources */,
+				5440035C1DDA25CB006CDD7E /* ConectivityProtocol.swift in Sources */,
+				544003571DDA25BF006CDD7E /* responseSwiftyJSON.swift in Sources */,
+				544003551DDA25BF006CDD7E /* HttpOptions.swift in Sources */,
+				5440035E1DDA25CB006CDD7E /* BackboneDelegates.swift in Sources */,
+				5440035D1DDA25CB006CDD7E /* HTTPProtocols.swift in Sources */,
+				544003511DDA25B8006CDD7E /* Model+Savable.swift in Sources */,
+				544003561DDA25BF006CDD7E /* JSONOperations.swift in Sources */,
+				5440034F1DDA25B2006CDD7E /* Model+Deletable.swift in Sources */,
+				5440035B1DDA25CB006CDD7E /* ModelProtocol.swift in Sources */,
+				544003501DDA25B4006CDD7E /* Model+JSONRepresentable.swift in Sources */,
+				544003591DDA25C3006CDD7E /* BaseCollection.swift in Sources */,
+				5440035A1DDA25C6006CDD7E /* Collection+Fetchable.swift in Sources */,
+				544003521DDA25B8006CDD7E /* Model+Creatable.swift in Sources */,
+				544003531DDA25B8006CDD7E /* Model+Fetchable.swift in Sources */,
+				5440034E1DDA25AD006CDD7E /* Model.swift in Sources */,
+				544003541DDA25BF006CDD7E /* Errors.swift in Sources */,
+				544003581DDA25BF006CDD7E /* ResponseMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +690,7 @@
 		5443C3061DD1D43600C016A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
 				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -730,6 +705,7 @@
 		5443C3071DD1D43600C016A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
 				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -743,7 +719,7 @@
 		};
 		545B96971DD1C15400A63856 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23196DF1CD01C91CB2E2402B /* Pods-BackboneSwift-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 2AE58EB0BE5BA35E4E111ECB /* Pods-BackboneSwift-tvOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -770,7 +746,7 @@
 		};
 		545B96981DD1C15400A63856 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8DC6D5E4512ABBDB8F933F0 /* Pods-BackboneSwift-tvOS.release.xcconfig */;
+			baseConfigurationReference = 28E642CC2D53C90AB8233205 /* Pods-BackboneSwift-tvOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -843,6 +819,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -889,6 +866,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -898,7 +876,7 @@
 		};
 		E116DD471DBE582B00BA812E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21201F30743C0F93BCF0AD04 /* Pods-BackboneSwift.debug.xcconfig */;
+			baseConfigurationReference = A830D060FE9CBA0A18C5429D /* Pods-BackboneSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -924,7 +902,7 @@
 		};
 		E116DD481DBE582B00BA812E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BEAA1C0D4D863C480CB0B24 /* Pods-BackboneSwift.release.xcconfig */;
+			baseConfigurationReference = 5501B4A73DFA983CF0453EA0 /* Pods-BackboneSwift.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -947,7 +925,7 @@
 		};
 		E116DD4A1DBE582B00BA812E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 427A5F62275459E6E4A35F65 /* Pods-BackboneSwiftTests.debug.xcconfig */;
+			baseConfigurationReference = 8DED0E0B7AA414602D69F81F /* Pods-BackboneSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
@@ -967,7 +945,7 @@
 		};
 		E116DD4B1DBE582B00BA812E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D57F29CBAD5DBE4D183A7F40 /* Pods-BackboneSwiftTests.release.xcconfig */;
+			baseConfigurationReference = 10B77FEAE243902FBEAEDA9D /* Pods-BackboneSwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
@@ -989,6 +967,7 @@
 				5443C3071DD1D43600C016A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		545B96991DD1C15400A63856 /* Build configuration list for PBXNativeTarget "BackboneSwift-tvOS" */ = {
 			isa = XCConfigurationList;

@@ -69,15 +69,15 @@ class CollectionTest: XCTestCase {
     
         let asyncExpectation = expectation(description: "testGithubAPI_Promisefy")
         let sutCollection = BaseCollection <ProjectSUT>(baseUrl:  "https://api.github.com/users/google/repos?page=1&per_page=7")
-   
-        sutCollection.fetch().then { (response) -> Void in
-            _ = response.result as? BaseCollection<ProjectSUT>
+        
+        sutCollection.fetch().then { (result:BaseCollection <ProjectSUT>, data) -> Void in
             XCTAssertTrue((sutCollection.pop()?.full_name!.contains("google")) == true)
             XCTAssertTrue(sutCollection.models.count !=  7, "should have the same number")
             asyncExpectation.fulfill()
         }.catch { (error) in
             XCTFail()
         }
+       
         
         self.waitForExpectations(timeout: 10, handler:{ (error) in
             print("time out")
@@ -111,7 +111,7 @@ class CollectionTest: XCTestCase {
         options.useCache = true
         var options2 = HttpOptions(queryString: "page=1&per_page=3")
         options2.useCache = true
-        sutCollection.fetch(usingOptions:options).then { (response) -> Promise<ResponseTuple> in
+        sutCollection.fetch(usingOptions:options).then { (response:BaseCollection <ProjectSUT>, metadata) -> Promise<ResponseTuple> in
 
             return sutCollection.fetch(usingOptions:options2)
         }.then { (response) -> Void in
@@ -123,7 +123,7 @@ class CollectionTest: XCTestCase {
         }.catch { error in
            XCTFail()
         }
-            
+        
      
         self.waitForExpectations(timeout: 60, handler:{ (error) in
             print("time out")

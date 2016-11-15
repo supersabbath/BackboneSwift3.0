@@ -13,11 +13,11 @@ import PromiseKit
 
 extension Savable where Self : Model {
     
-    public func save(usingOptions options: HttpOptions? = nil) -> Promise<ResponseTuple> {
+    public func save<Self>(usingOptions options: HttpOptions? = nil) -> Promise<(result:Self, metadata: ResponseMetadata)> {
         
         return Promise {  fulfill, reject in
-            save(usingOptions: options, onSuccess: { (result) -> Void in
-                fulfill(result)
+            save(usingOptions: options, onSuccess: { (response) -> Void in
+                fulfill((result: response.result as! Self, metadata: response.metadata))
             }) { (error) -> Void in
                 reject (error )
             }
