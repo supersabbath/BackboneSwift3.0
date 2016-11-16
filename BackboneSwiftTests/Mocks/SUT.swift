@@ -30,6 +30,34 @@ open class VideoCollectionSUT : Model {
 }
 
 
+public class Title:Model  {
+    
+    public var titleId: String?
+    public var title: String?
+    public var friendlyTitle4Url: String?
+    public var arAgeRating: String?
+    
+    override open func parse(_ response: JSON) {
+        super.parse(response)
+   
+   
+        if let thubs = response["thumbnails"].dictionary {
+            print(thubs)
+        }
+        if let contentArray = response["media"][0]["content"].array {
+            contentArray.forEach({ (json) in
+                print(json.description)
+            })
+        }
+ 
+    }
+}
+
+open class SeriesCollection : BaseCollection<Title> {
+
+    
+}
+
 /**************************************************************
  
  SUTs:  USED in MODEL test TestClass and VideoSUT

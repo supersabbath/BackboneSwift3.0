@@ -40,6 +40,8 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
     /**
      
      parse is called by Backbone whenever a collection's models are returned by the server, in fetch. The function is passed the raw response object, and should return the array of model attributes to be added to the collection. The default implementation is a no-op, simply passing through the JSON response. Override this if you need to work with a preexisting API, or better namespace your responses.
+     
+        Defauld implementation: If the Json response is a json dictionary object it will iterate until finding and array of elements that will be considered as models.  
      */
     
     open func parse(_ response: JSON) {
@@ -48,13 +50,13 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
             case .array:
                 populateModelsArray(response.arrayValue)
             case .dictionary:
-                let jsonArray =  response.dictionaryValue.map{ (key , jsonValue) -> JSON in
-                    return jsonValue
-                }
-                if let titles = response["titles"].array {
-                      populateModelsArray(jsonArray)
-                }
-          
+                for (_ , value)  in response.dictionaryValue {
+                    if value.type == .array {
+                        populateModelsArray(value.arrayValue)
+                       break
+                    }
+                 }
+            
             default:
                 print("Collections Parse should received a Sequece ")
             }

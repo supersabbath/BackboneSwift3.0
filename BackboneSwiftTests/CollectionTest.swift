@@ -129,5 +129,20 @@ class CollectionTest: XCTestCase {
             print("time out")
         });
     }
+    
+    
+    func testDictionaryCollection(){
+        
+        let asyncExpectation = expectation(description: "testDictionaryCollection")
+        let url = "https://peg-dev-public-api.eu.cloudhub.io/api/v0.2/mediaCatalog/titles/25493544051"
+        let sut = SeriesCollection(baseUrl: url)
+        sut.fetch().then { (result:SeriesCollection, metadata) -> Void in
+            XCTAssertTrue(result.models.first?.title == "Weeds")
+            asyncExpectation.fulfill()
+        }.catch { (error) in
+            XCTFail()
+        }
+        waitForExpectations(timeout: 20) { (error) in print("Time out")}
+    }
  
 }
