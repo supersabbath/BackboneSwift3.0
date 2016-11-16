@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 import PromiseKit
 
+@testable import BackboneSwift
+
 /**
  
  SUT Classes for CollectionTest
