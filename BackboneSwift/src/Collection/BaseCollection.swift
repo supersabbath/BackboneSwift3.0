@@ -51,7 +51,10 @@ open class BaseCollection<GenericModel: ModelProtocol>  : NSObject , BaseObjectP
                 let jsonArray =  response.dictionaryValue.map{ (key , jsonValue) -> JSON in
                     return jsonValue
                 }
-            populateModelsArray(jsonArray)
+                if let titles = response["titles"].array {
+                      populateModelsArray(jsonArray)
+                }
+          
             default:
                 print("Collections Parse should received a Sequece ")
             }
