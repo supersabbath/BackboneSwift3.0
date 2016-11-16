@@ -8,11 +8,11 @@ PODS:
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - BackboneSwift (from `/Users/canon/Projects/tempBackboneSwift/BackboneSwift`)
+  - BackboneSwift (from `~/Proyectos/BackboneSwift3.0`)
 
 EXTERNAL SOURCES:
   BackboneSwift:
-    :path: "/Users/canon/Projects/tempBackboneSwift/BackboneSwift"
+    :path: ~/Proyectos/BackboneSwift3.0
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -20,6 +20,6 @@ SPEC CHECKSUMS:
   PromiseKit: 8e8ee39d33ff199d92a1a883b5396f6285be6c91
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: d0a00c86ca2d7f6fc61461f6c5ad24208e2724db
+PODFILE CHECKSUM: f12bd9f09c13016c94e14aa2f9fcf81cba73863a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

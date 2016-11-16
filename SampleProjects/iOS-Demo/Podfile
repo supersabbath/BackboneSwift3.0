@@ -3,7 +3,7 @@ use_frameworks!
 
 target "Backbone-IOS-Demo" do
     #pod 'BackboneSwift', :git => "https://github.com/supersabbath/BackboneSwift3.0.git" ,  :branch => 'master'
-    pod 'BackboneSwift' , :path => "/Users/canon/Projects/tempBackboneSwift/BackboneSwift"
+    pod 'BackboneSwift' , :path => "~/Proyectos/BackboneSwift3.0"
 end
 
 post_install do |installer|

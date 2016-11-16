@@ -26,7 +26,7 @@ extension ConnectivityProtocol where Self : BaseObjectProtocol   {
  
     public func synch<T:BaseObjectProtocol>(_ caller:T? , modelURL:URLConvertible , method:HTTPMethod , options:HttpOptions? = nil, onSuccess: @escaping (ResponseTuple)->Void , onError:@escaping (BackboneError)->Void ){
         
-        Alamofire.request(modelURL, method: method , parameters: options?.body , headers: options?.headers ).validate(statusCode: 200..<500).responseSwiftyJSON(completionHandler: { [weak caller] (dataResponse, jsonObject) in
+        Alamofire.request(modelURL, method: method , parameters: options?.body, encoding: JSONEncoding.default, headers: options?.headers ).validate(statusCode: 200..<500).responseSwiftyJSON(completionHandler: { [weak caller] (dataResponse, jsonObject) in
             
             guard let weakSelf = caller else { return } // avoid retain cycle and Async callback crashes
             guard let response = dataResponse.response  else {

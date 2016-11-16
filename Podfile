@@ -1,6 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
 use_frameworks!
 
 def libraries
@@ -12,11 +11,15 @@ def libraries
 end
 
 target :'BackboneSwift' do
-  
+    platform :ios, '9.0'
     libraries
     
 end
 
+target :'BackboneSwift-tvOS' do
+    platform :tvos, '9.1'
+    libraries
+end
 
 target :'BackboneSwiftTests' do
     libraries

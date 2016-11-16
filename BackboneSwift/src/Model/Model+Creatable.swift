@@ -29,8 +29,10 @@ extension Creatable where Self:Model {
         
         var postOptions = options
         if options != nil {
-            postOptions?.body = jsonDict()
-        }else {
+            if postOptions?.body == nil {
+                postOptions?.body = jsonDict()
+            }
+        } else {
             postOptions = HttpOptions(postBody:jsonDict())
         }
         processOptions(feedURL, inOptions: postOptions  , complete: { [weak self] (options, url) in
