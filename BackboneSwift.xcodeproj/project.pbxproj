@@ -82,6 +82,8 @@
 		10B77FEAE243902FBEAEDA9D /* Pods-BackboneSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		28E642CC2D53C90AB8233205 /* Pods-BackboneSwift-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2AE58EB0BE5BA35E4E111ECB /* Pods-BackboneSwift-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift-tvOS/Pods-BackboneSwift-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5440036C1DDCA239006CDD7E /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "BackboneSwift-tvOS/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
+		5440036D1DDCA279006CDD7E /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "BackboneSwiftTests-tvOS/Info-tvOS.plist"; sourceTree = SOURCE_ROOT; };
 		5501B4A73DFA983CF0453EA0 /* Pods-BackboneSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwift/Pods-BackboneSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8DED0E0B7AA414602D69F81F /* Pods-BackboneSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BackboneSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BackboneSwiftTests/Pods-BackboneSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F299444263E8315E0D1103C /* Pods_BackboneSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BackboneSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +105,7 @@
 		E116DD351DBE582B00BA812E /* BackboneSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackboneSwift.h; sourceTree = "<group>"; };
 		E116DD361DBE582B00BA812E /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		E116DD3B1DBE582B00BA812E /* BackboneSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackboneSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E116DD421DBE582B00BA812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E116DD421DBE582B00BA812E /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		E11902261DBF5C11009C64FD /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		E11902281DBF5D9F009C64FD /* SUT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SUT.swift; path = Mocks/SUT.swift; sourceTree = "<group>"; };
 		E12622501DC0DABF00613DAD /* TestDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestDataSource.swift; path = Mocks/TestDataSource.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				E1126F3C1DC342B70035D89D /* Collection */,
 				E12622581DC2301700613DAD /* Protocols */,
 				E116DD361DBE582B00BA812E /* Info-iOS.plist */,
+				5440036C1DDCA239006CDD7E /* Info-tvOS.plist */,
 				E116DD351DBE582B00BA812E /* BackboneSwift.h */,
 			);
 			path = BackboneSwift;
@@ -275,7 +278,8 @@
 			children = (
 				E1126F531DC345E70035D89D /* SUT */,
 				E1126F511DC345B60035D89D /* DataSource */,
-				E116DD421DBE582B00BA812E /* Info.plist */,
+				E116DD421DBE582B00BA812E /* Info-iOS.plist */,
+				5440036D1DDCA279006CDD7E /* Info-tvOS.plist */,
 				E11902261DBF5C11009C64FD /* ModelTests.swift */,
 				E1700CF41DC35E4A00C9A73B /* CollectionTest.swift */,
 			);
@@ -692,7 +696,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
-				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info.plist";
+				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.starzplayarabia.BackboneSwiftTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -707,7 +711,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
-				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info.plist";
+				INFOPLIST_FILE = "BackboneSwiftTests-tvOS/Info-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.starzplayarabia.BackboneSwiftTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -887,7 +891,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
-				INFOPLIST_FILE = BackboneSwift/Info.plist;
+				INFOPLIST_FILE = "BackboneSwift/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -933,7 +937,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 				);
-				INFOPLIST_FILE = BackboneSwiftTests/Info.plist;
+				INFOPLIST_FILE = "BackboneSwiftTests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starzplayarabia.BackboneSwiftTests;
@@ -949,7 +953,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = Z8RRQR2TKE;
-				INFOPLIST_FILE = BackboneSwiftTests/Info.plist;
+				INFOPLIST_FILE = "BackboneSwiftTests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starzplayarabia.BackboneSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
