@@ -63,13 +63,12 @@ extension ConnectivityProtocol where Self : BaseObjectProtocol   {
 
     
     public func processOptions(_ baseUrl:String , inOptions:HttpOptions?, complete: (_ options:HttpOptions? , _ url: URLComponents) -> Void) {
-        
         var urlComponents = URLComponents(string:baseUrl)!
         if let query = inOptions?.query{
             urlComponents.query = query
         }
         if let path = inOptions?.relativePath  {
-            if  urlComponents.path.characters.count == 0 {
+            if  urlComponents.path.characters.count != 0 {
                 urlComponents.path = "\(urlComponents.path)/\(path)"
             }else {
                 urlComponents.path = "/\(path)"
