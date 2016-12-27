@@ -30,12 +30,14 @@ extension Savable where Self : Model {
             onError(.invalidURL)
             return
         }
-        var putOptions = options
-        if options != nil {
+        var putOptions = HttpOptions(postBody:self.jsonDict())
+
+        if options?.body != nil {
+            putOptions = options
+        } else if options != nil {
             putOptions?.body = jsonDict()
-        }else {
-            putOptions = HttpOptions(postBody:self.jsonDict())
         }
+        
         processOptions(feedURL, inOptions: putOptions  , complete: { (options, url) in
             self.synch( self, modelURL:url, method: .put, options: options,onSuccess: onSuccess, onError: onError)
         })
