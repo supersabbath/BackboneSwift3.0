@@ -33,10 +33,10 @@ extension Savable where Self : Model {
         var putOptions = HttpOptions(postBody:self.jsonDict())
 
         if options?.body != nil {
-            putOptions = options
+            putOptions = options!
         } else if options != nil {
-            putOptions = options
-            putOptions?.body = jsonDict()
+            putOptions = options!
+            putOptions.body = jsonDict()
         }
         
         processOptions(feedURL, inOptions: putOptions  , complete: { (options, url) in
