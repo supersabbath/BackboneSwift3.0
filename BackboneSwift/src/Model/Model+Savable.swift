@@ -35,6 +35,7 @@ extension Savable where Self : Model {
         if options?.body != nil {
             putOptions = options
         } else if options != nil {
+            putOptions = options
             putOptions?.body = jsonDict()
         }
         
