@@ -95,7 +95,7 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
                 case .string:
                     setValue(json[varName].stringValue, forKey: varName)
                 case .number:
-                    setValue( String(json[varName].intValue), forKey: varName)
+                    setValue(json[varName].stringValue, forKey: varName)
                 case .bool:
                     setValue(json[varName].boolValue, forKey: varName)
                 default:
