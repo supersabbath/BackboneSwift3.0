@@ -163,12 +163,12 @@ open class Model: NSObject , ModelProtocol , JsonRepresentable {
                 module = "BackboneSwiftTests"
             } else {
                 guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
-                module = (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
+                module = NSStringFromClass(type(of:self)).components(separatedBy: ".").first ?? (bundleIdentifier as NSString).pathExtension.replacingOccurrences(of: "-", with: "_")
             }
             
         #else
             guard let bundleIdentifier =  Bundle.main.bundleIdentifier else { return nil }
-            module = (bundleIdentifier as NSString).pathExtension
+            module = NSStringFromClass(type(of:self)).components(separatedBy: ".").first ?? (bundleIdentifier as NSString).pathExtension
         #endif
             func makeInstance(_ module :String , _ className:String) -> AnyObject? {
             
