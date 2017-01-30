@@ -72,8 +72,8 @@ Download the code and install the pod file.
 Run the test target or use the Demo app included
 
 ## Contributors
-[Fer Canon ](https://github.com/supersabbath)
-[Miguel Martin ](https://github.com/mikemm13)
+[Fer Canon ](https://github.com/supersabbath) , 
+[Miguel Martin ](https://github.com/mikemm13) ,
 [Mario Rosales](https://github.com/mariorosales)
 ## License
 

@@ -25,6 +25,10 @@ target :'BackboneSwiftTests' do
     libraries
 end
 
+target :'DemoApp' do
+    libraries
+end
+
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
