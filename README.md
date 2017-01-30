@@ -1,36 +1,65 @@
 # BackboneSwift3.0
 ## Synopsis
 
-BackboneSwift is a simple REST client inspired by Backbone JS. 
+BackboneSwift is a simple REST client inspired by Backbone JS. BackboneSwift offers a combination between alamoFire and PromiseKit. 
 
 ## Code Example
+```swift
+import BackboneSwift
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+// Declare your collection and its models.  
+	class Repo : Model {
+	    var name: String = ""
+	    var html_url: String = ""
+	    var score:Int = 0
+	}
+
+
+	class Repositories: BaseCollection <Repo> {
+	}
+
+And just use it:
 
 ```swift
+//GET example 
+	var githubRepos = Repositories(baseUrl:"https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc")
 
-var githubRepos = Repositories(baseUrl:"https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc")
-
-override func viewDidLoad() {
-super.viewDidLoad()
-githubRepos.fetch().then { (repos:Repositories, _) -> Void in
-self.tableView.reloadData()
-}.catch { (error) in
-print(error)
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		githubRepos.fetch().then { (repos:Repositories, _) -> Void in
+			self.tableView.reloadData()
+		}.catch { (error) in
+			print(error)
+		}
 }
-}
-
+```
+Other HTTP methods:
+```swift
+      // POST
+        Repo().create().then { (repo:Repo, metadata:ResponseMetadata)  -> Void in
+            // do whatever you want 
+        }
+        
+        // Delete
+        Repo().delete().then { (repo:Repo, metadata:ResponseMetadata)  -> Void in
+            
+        }
+        // Update
+        Repo().save().then { (repo:Repo, metadata:ResponseMetadata) -> Void in
+            
+        }
 ```
 
 ## Motivation
 
-    Swift is a strong typed lang that gets very complicated when creating an object from a json file. 
-    Backbone swift abstracts that complexity away . handly with the optionals unwraping , the parsing 
+Swift is a strong typed lang that gets very complicated when creating an object from a json file. 
+Backbone swift abstracts that complexity away . handly with the optionals unwraping , the parsing 
     Also backbone swift offers a promise oriented sintaxis to avoid the 'callback hell' 
 
 ## Installation
-just copy this into your pod fiel 
-pod 'BackboneSwift'
+just copy this into your pod file 
+
+	$ pod 'BackboneSwift'
 
 ## Tests
 
