@@ -12,11 +12,12 @@ import BackboneSwift
 
 class MainTableViewController: UITableViewController {
 
-    var githubRepos = Repositories(baseUrl:"https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc")
+    var githubRepositories = Repositories(baseUrl:"https://api.github.com/search/repositories")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        githubRepos.fetch().then { (repos:Repositories, _) -> Void in //Asynch call back
+        let requestOptions = HttpOptions(queryString: "q=language:swift&sort=stars&order=desc")
+        githubRepositories.fetch(usingOptions:requestOptions).then { (repos:Repositories, _) -> Void in //Asynch call back
             self.tableView.reloadData()
         }.catch { (error) in
             print(error)
@@ -27,15 +28,15 @@ class MainTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return githubRepos.models.count
+        return githubRepositories.models.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "demoId", for: indexPath)
 
-        cell.textLabel?.text = githubRepos.models[indexPath.row].html_url
-        print(githubRepos.models[indexPath.row].score)
+        cell.textLabel?.text = githubRepositories.models[indexPath.row].html_url
+        print(githubRepositories.models[indexPath.row].score)
   
         return cell
     }

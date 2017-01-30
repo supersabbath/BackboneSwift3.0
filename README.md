@@ -16,25 +16,27 @@ import BackboneSwift
 	}
 
 
-	class Repositories: BaseCollection <Repo> { 
+	class Repositories: BaseCollection <Repo> { // create the collection
+
 	}
 ```
 
 And just use them:    
 ```swift
-//GET example 
-	var githubUrl = "https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc"
-	var githubRepos = Repositories(baseUrl:)
+//GET example in a tableViewController
+
+	var githubRepositories = Repositories(baseUrl:"https://api.github.com/search/repositories")
 
 	override func viewDidLoad() {
-		super.viewDidLoad()
-		//http GET
-		githubRepos.fetch().then { (repos:Repositories, _) -> Void in
-			self.tableView.reloadData()
-		}.catch { (error) in
-			// This will always get called if something goes wrong
-			print(error)
-		}
+		// Use the HttpOptions to add a query
+		let requestOptions = HttpOptions(queryString: "q=language:swift&sort=stars&order=desc")
+		// HTTP GET
+        githubRepositories.fetch(usingOptions:requestOptions).then { (repos:Repositories, _) -> Void in //Asynch call back
+            self.tableView.reloadData()
+        }.catch { (error) in
+        	// This will always get called if something goes wrong
+            print(error)
+        }
 	}
 ```
 Other HTTP methods:
