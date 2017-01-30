@@ -1,4 +1,4 @@
-# BackboneSwift3.0
+# BackboneSwift
 ## Synopsis
 
 BackboneSwift is a simple REST client inspired by Backbone JS. BackboneSwift offers a combination between [Alamofire](https://github.com/Alamofire/Alamofire) , [PromiseKit](https://github.com/mxcl/PromiseKit) and [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) that will allow you create models and collection easly. 
