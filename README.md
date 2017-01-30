@@ -4,10 +4,11 @@
 BackboneSwift is a simple REST client inspired by Backbone JS. BackboneSwift offers a combination between alamoFire and PromiseKit. 
 
 ## Code Example
+Declare your custom models and collections
 ```swift
 import BackboneSwift
 
-// Declare your collection and its models.  
+// Declare a model that inherits from BackboneSwit.  
 	class Repo : Model {
 	    var name: String = ""
 	    var html_url: String = ""
@@ -15,11 +16,11 @@ import BackboneSwift
 	}
 
 
-	class Repositories: BaseCollection <Repo> {
+	class Repositories: BaseCollection <Repo> { 
 	}
+```
 
-And just use it:
-
+And just use it:  
 ```swift
 //GET example 
 	var githubRepos = Repositories(baseUrl:"https://api.github.com/search/repositories?q=language:swift&sort=stars&order=desc")
